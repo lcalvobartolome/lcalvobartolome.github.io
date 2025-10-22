@@ -19,6 +19,7 @@ body.bg-body-tertiary {
     padding: 0;
     font-family: "Lato", sans-serif;
     font-weight: 400;
+    font-size:  14px;
     background-color: var(--blue-bg) !important;
     color: var(--text);
     padding-top: 5rem; /* if navbar is fixed */
@@ -63,7 +64,7 @@ footer {
     color: #bbdefb !important;
 }
 
-/* 🔒 Logo size fix */
+/* Logo size fix */
 .navbar-brand img {
     height: 40px !important;      /* fixed height */
     width: auto !important;       /* keep aspect ratio */
@@ -141,7 +142,7 @@ img.lazy, div.lazy {
     vertical-align: -10%;
     margin-right: 2px;
     line-break: unset;
-    background-color: var(--blue-700);
+    background-color: transparent !important;
     color: #ffffff;
     padding: 2px 6px;
     border-radius: 4px;
