@@ -30,10 +30,10 @@ short_bio: >-
   <p>
     My work lies at the intersection of NLP, human-computer interaction, and usable software design. I'm passionate about creating language technologies that truly serve people — bridging the gap between technical innovation and real-world usability.
   </p>
-  <p>
-    As I complete my PhD (defending on November 28th!), I'm excited to shift my focus toward Clinical NLP, continuing to explore how we can make NLP tools more effective, transparent, and user-centered.
-  </p>
 
+#<p>
+#  As I complete my PhD (defending on November 28th!), I'm excited to shift my focus toward Clinical NLP, continuing to explore how we can make NLP tools more effective, transparent, and user-centered.
+#</p>
 
 portrait_url: /assets/images/photos/yo.jpeg
 #portrait_caption: >-
