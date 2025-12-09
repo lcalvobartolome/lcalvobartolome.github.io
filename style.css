@@ -1039,8 +1039,31 @@ footer {
     justify-content: center;
   }
 
+  /* --- PUBLICATIONS: turn carousel into a simple list on phones --- */
+
+  /* stack everything, no side columns for arrows */
+  .pubs-carousel {
+    display: block;
+  }
+
+  /* hide arrows on phone */
+  .carousel-arrow {
+    display: none;
+  }
+
+  /* vertical list of cards */
   .pubs-grid {
+    margin-top: 0.8rem;
+    display: flex;
     flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* always show cards (override JS display:none) */
+  .pub-card {
+    flex: none;
+    width: 100%;
+    display: block !important;
   }
 
   .filter-bar {
