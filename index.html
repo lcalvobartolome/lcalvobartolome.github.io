@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Academic homepage of Lorena Calvo-Bartolomé – multilingual NLP, evaluation, and human-centered language technologies."
+      content="Academic homepage of Lorena Calvo-Bartolomé - multilingual NLP, evaluation, and human-centered language technologies."
     />
 
     <!-- 🐒 favicon as inline SVG -->
@@ -26,8 +26,8 @@
         <div class="logo-wordmark">
           <div class="logo-circle" aria-hidden="true"></div>
           <div>
-            <div class="logo-text-main">Lorena Calvo-Bartolomé 🐒</div>
-            <div class="logo-text-sub">Words · Languages · Code</div>
+            <div class="logo-text-main">Lorena Calvo-Bartolomé 🐒🐒</div>
+            <div class="logo-text-sub">NLP · Real Problems · Code</div>
           </div>
         </div>
         <nav>
@@ -50,19 +50,18 @@
 
             <h1 class="hero-title">
               I design computational models that help us understand
-              <span id="hero-word" class="hero-tagline-word">emotions</span>.
+              <span id="hero-word" class="hero-tagline-word"
+                >large document collections</span
+              >.
             </h1>
 
             <p class="hero-tagline">
-              Hi, I'm Lorena. So far my work has focused on topic models and
-              scalable NLP systems that support real-world decisions,
-              especially in Science, Technology, and Innovation (STI), where
-              analysts need to understand large, messy document collections to
-              guide decisions.
+              Hi, I'm Lorena :) So far my work has focused on topic models and
+              scalable NLP systems that support real-world decisions, especially
+              in the Science, Technology, and Innovation (STI) domain, where analysts need to understand large, messy document collections to guide
+              decisions.
               <br /><br />
-              I'm now extending this line into mental health: designing
-              NLP-based tools that help practitioners identify which social and
-              emotional factors genuinely drive risk in young people, and where
+              I'm now aiming to extend this line into youth mental health: designing NLP-based tools that help practitioners identify which social and emotional factors drive risk in young people, and where
               timely interventions could prevent crises rather than just react
               to them.
             </p>
@@ -112,9 +111,7 @@
               related tools more usable for end users: evaluation protocols that
               reflect real tasks, interactive systems for exploring large text
               collections, and interfaces that let experts guide models rather
-              than just consume their output. More recently, I'm adapting these
-              ideas to youth mental health, where we need interpretable models
-              of how social and emotional contexts shape risk over time.
+              than just consume their output.
             </p>
 
             <!-- Filters -->
@@ -139,7 +136,7 @@
                     value="2025"
                   />
                 </div>
-                <span id="yearLabel">2023–2025</span>
+                <span id="yearLabel">2023-2025</span>
               </div>
 
               <div class="filter-group">
@@ -199,11 +196,11 @@
           </div>
 
           <p class="section-subtitle" id="studentsIntro"></p>
-          <div class="student-lines" id="studentLines"></div>
           <p class="section-subtitle" id="studentsFocus"></p>
+          <div class="student-lines" id="studentLines"></div>
 
           <a class="ideas-button" id="ideasButton" href="projects.html">
-            Current project ideas →
+            Current project ideas & Past projects →
           </a>
         </section>
       </main>
@@ -217,7 +214,9 @@
     <div class="pub-modal" id="pubModal" aria-hidden="true">
       <div class="pub-modal-card">
         <div class="pub-modal-inner">
-          <button class="modal-close" type="button" aria-label="Close">×</button>
+          <button class="modal-close" type="button" aria-label="Close">
+            ×
+          </button>
           <div id="pubModalContent"></div>
         </div>
       </div>
@@ -237,11 +236,14 @@
         const el = document.getElementById("hero-word");
         if (!el) return;
         const words = [
-          "emotions",
+          "large document collections",
+          "scientific literature",
+          "technology trends",
+          "research insights",
           "mental health",
           "language",
           "behaviour",
-          "well-being"
+          "well-being",
         ];
         let idx = 0;
         setInterval(() => {
@@ -312,7 +314,7 @@
             multi: "multilingual",
             eval: "evaluation",
             hci: "HCI / users",
-            tooling: "tools"
+            tooling: "tools",
           };
           pub.tags.forEach((tag) => {
             const pill = document.createElement("span");
@@ -459,7 +461,7 @@
             max = min;
             yearMax.value = String(max);
           }
-          yearLabel.textContent = min + "–" + max;
+          yearLabel.textContent = min + "-" + max;
           updateHighlight();
         }
 
@@ -609,7 +611,9 @@
         try {
           const res = await fetch("teaching.json");
           if (!res.ok) {
-            throw new Error("HTTP " + res.status + " when fetching teaching.json");
+            throw new Error(
+              "HTTP " + res.status + " when fetching teaching.json"
+            );
           }
           const data = await res.json();
 
@@ -659,7 +663,9 @@
         try {
           const res = await fetch("students.json");
           if (!res.ok) {
-            throw new Error("HTTP " + res.status + " when fetching students.json");
+            throw new Error(
+              "HTTP " + res.status + " when fetching students.json"
+            );
           }
           const data = await res.json();
 
@@ -693,7 +699,7 @@
         }
         const formatter = new Intl.DateTimeFormat("en", {
           month: "long",
-          year: "numeric"
+          year: "numeric",
         });
         span.textContent = formatter.format(d);
       }

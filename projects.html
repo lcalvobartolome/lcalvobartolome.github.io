@@ -1,101 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Project Ideas – Lorena Bartolomé</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="style.css" />
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Project ideas – Lorena Calvo-Bartolomé</title>
 
-<body>
-  <div class="page">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Project ideas and previous supervision topics for Lorena Calvo-Bartolomé."
+    />
 
-    <!-- Simple header reusing your style -->
-    <header>
-      <div class="logo-wordmark">
-        <div class="logo-circle" aria-hidden="true"></div>
-        <div>
-          <div class="logo-text-main">Lorena Bartolomé</div>
-          <div class="logo-text-sub">Language · Emotion · Systems</div>
+    <!-- same 🐒 favicon -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>🐒</text></svg>"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="page">
+      <!-- simple header that links back to main page -->
+      <header>
+        <div class="logo-wordmark">
+          <div class="logo-circle" aria-hidden="true"></div>
+          <div>
+            <div class="logo-text-main">Lorena Calvo-Bartolomé 🐒</div>
+            <div class="logo-text-sub">Project ideas & supervision</div>
+          </div>
         </div>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="index.html#top">Home</a></li>
-        </ul>
-      </nav>
-    </header>
+      </header>
 
-    <main>
-      <section class="section card-section">
-        <div class="section-heading">
-          <div class="section-icon" aria-hidden="true"></div>
-          <h2>Current project ideas</h2>
-        </div>
+      <main>
+        <!-- CURRENT OPEN PROJECTS -->
+        <section class="section card-section" id="open-projects">
+          <div class="section-heading">
+            <div class="section-icon" aria-hidden="true"></div>
+            <h2>Current project ideas</h2>
+          </div>
 
-        <p class="section-subtitle">
-          These are examples of directions I’m excited to supervise.  
-          Each idea can be adapted to bachelor’s, master’s, or short research projects.
-        </p>
+          <div id="openProjectsContainer">
+            <div class="ideas-grid" id="openProjectsGrid"></div>
+          </div>
+        </section>
 
-        <!-- ideas grid populated from ideas.json -->
-        <div class="ideas-grid" id="ideasGrid" aria-label="Current project ideas"></div>
-      </section>
-    </main>
-  </div>
+        <!-- PAST SUPERVISED TOPICS -->
+        <section class="section card-section" id="past-projects">
+          <div class="section-heading">
+            <div class="section-icon" aria-hidden="true"></div>
+            <h2>Previous thesis topics</h2>
+          </div>
 
-  <script>
-    // Build one idea card from JSON
-    function buildIdeaCard(idea) {
-      const card = document.createElement("article");
-      card.className = "idea-card";
-      card.id = idea.id;
+          <p class="section-subtitle">
+            Here are some of the topics I've supervised in the past. Titles are
+            listed without author names, with the degree indicated in
+            parentheses.
+          </p>
 
-      const h3 = document.createElement("h3");
-      h3.textContent = (idea.icon ? idea.icon + " " : "") + idea.title;
-      card.appendChild(h3);
+          <ul class="past-projects-list" id="pastProjectsList"></ul>
+        </section>
+      </main>
 
-      const p = document.createElement("p");
-      p.textContent = idea.summary;
-      card.appendChild(p);
+      <footer>
+        <a href="index.html">← Back to main page</a>
+      </footer>
+    </div>
 
-      if (idea.tags && idea.tags.length) {
-        const tagsWrap = document.createElement("div");
-        tagsWrap.className = "idea-tags";
-        idea.tags.forEach(tag => {
-          const span = document.createElement("span");
-          span.textContent = tag;
-          tagsWrap.appendChild(span);
-        });
-        card.appendChild(tagsWrap);
-      }
+    <script>
+      async function loadProjects() {
+        const openGrid = document.getElementById("openProjectsGrid");
+        const openContainer = document.getElementById("openProjectsContainer");
+        const pastList = document.getElementById("pastProjectsList");
 
-      return card;
-    }
+        if (!openGrid || !openContainer || !pastList) return;
 
-    // Load ideas.json and render
-    async function loadIdeas() {
-      const grid = document.getElementById("ideasGrid");
-      if (!grid) return;
+        try {
+          const res = await fetch("projects.json");
+          if (!res.ok) {
+            throw new Error("HTTP " + res.status + " when fetching projects.json");
+          }
+          const data = await res.json();
 
-      try {
-        const res = await fetch("ideas.json");
-        if (!res.ok) {
-          throw new Error("HTTP " + res.status + " when fetching ideas.json");
+          const openProjects = data.open_projects || [];
+          const pastProjects = data.past_projects || [];
+
+          // --- OPEN PROJECTS ---
+          if (openProjects.length === 0) {
+            // show fallback message
+            openContainer.innerHTML =
+              '<p class="section-subtitle">' +
+              "None currently, but write me if you'd like to work on " +
+              "anything related to my current or past research, or if you " +
+              "think I could be a good supervisor fit." +
+              "</p>";
+          } else {
+            openProjects.forEach((proj) => {
+              const card = document.createElement("article");
+              card.className = "idea-card";
+
+              if (proj.icon) {
+                const iconSpan = document.createElement("div");
+                iconSpan.style.fontSize = "1.6rem";
+                iconSpan.style.marginBottom = "0.4rem";
+                iconSpan.textContent = proj.icon;
+                card.appendChild(iconSpan);
+              }
+
+              const h3 = document.createElement("h3");
+              h3.textContent = proj.title;
+              card.appendChild(h3);
+
+              if (proj.summary) {
+                const p = document.createElement("p");
+                p.textContent = proj.summary;
+                card.appendChild(p);
+              }
+
+              if (proj.tags && proj.tags.length) {
+                const tagRow = document.createElement("div");
+                tagRow.className = "idea-tags";
+                proj.tags.forEach((t) => {
+                  const span = document.createElement("span");
+                  span.textContent = t;
+                  tagRow.appendChild(span);
+                });
+                card.appendChild(tagRow);
+              }
+
+              openGrid.appendChild(card);
+            });
+          }
+
+          // --- PAST PROJECTS ---
+          pastProjects.forEach((proj) => {
+            const li = document.createElement("li");
+
+            const degree = proj.degree || "";
+            const degreeClass =
+              degree.toLowerCase().includes("bsc") ? "degree-bsc" :
+              degree.toLowerCase().includes("msc") ? "degree-msc" :
+              "";
+
+            li.innerHTML = `
+              ${proj.title}
+              <span class="degree-tag ${degreeClass}">(${degree})</span>
+            `;
+
+            pastList.appendChild(li);
+
+          });
+        } catch (err) {
+          console.error("Error loading projects.json", err);
+          openContainer.innerHTML =
+            "<p>Could not load current project ideas at the moment.</p>";
         }
-        const ideas = await res.json();
-
-        ideas.forEach(idea => {
-          const card = buildIdeaCard(idea);
-          grid.appendChild(card);
-        });
-      } catch (err) {
-        console.error("Error loading ideas.json", err);
-        grid.innerHTML = "<p>Could not load project ideas.</p>";
       }
-    }
 
-    document.addEventListener("DOMContentLoaded", loadIdeas);
-  </script>
-</body>
+      document.addEventListener("DOMContentLoaded", loadProjects);
+    </script>
+  </body>
 </html>

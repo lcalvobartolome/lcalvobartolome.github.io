@@ -1,0 +1,56 @@
+{
+    "open_projects": [
+    ],
+    "past_projects": [
+        {
+            "id": "eval-topic-models-llm-vs-bayes",
+            "degree": "BSc thesis",
+            "title": "Evaluating Topic Models: Large Language Models versus the Bayesian Approach"
+        },
+        {
+            "id": "metrics-doc-eval-topic-models",
+            "degree": "BSc thesis",
+            "title": "Metrics analysis for document evaluation in topic modeling"
+        },
+        {
+            "id": "electricity-market-time-series",
+            "degree": "MSc thesis",
+            "title": "Time Series Modeling in the Electricity Market: From Traditional Approaches to Current Strategies"
+        },
+        {
+            "id": "genai-relationships-app",
+            "degree": "MSc thesis",
+            "title": "Beyond intuition: Development and evaluation of a generative artificial intelligence-based application for interpersonal relationship management"
+        },
+        {
+            "id": "multilingual-contradiction-prod",
+            "degree": "BSc thesis",
+            "title": "Systems for Multilingual Contradiction Detection in Production Environments"
+        },
+        {
+            "id": "multilingual-contradiction-topic-llm",
+            "degree": "BSc thesis",
+            "title": "Multilingual Contradiction Detection: Hybrid Approaches with Topic Modeling and Large Language Models"
+        },
+        {
+            "id": "chatbot-unstructured-docs",
+            "degree": "MSc thesis",
+            "title": "Chatbot for Unstructured Documents: Extraction, Modeling, and Response by Roles"
+        },
+        {
+            "id": "tm-classical-vs-nn",
+            "degree": "MSc thesis",
+            "title": "Comparative analysis of classical and Neural Network based topic models of scientific publications"
+        },
+        {
+            "id": "bi-dashboards-science-activity",
+            "degree": "MSc thesis",
+            "title": "Business Intelligence tools for creating dashboards for the analysis of research activity and scientific production"
+        },
+        {
+            "id": "nlp-biosanitary-sti",
+            "degree": "BSc thesis",
+            "title": "Application of Natural Language Processing techniques for the analysis of science and technology in the biosanitary field"
+        }
+    ]
+}
