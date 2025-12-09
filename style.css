@@ -449,12 +449,14 @@ main {
   font-weight: 500;
 }
 
-/* dual range slider */
+/* ----------------------------------------------------------
+   DUAL RANGE SLIDER (YEAR)
+----------------------------------------------------------- */
 
 .filter-range {
   position: relative;
   width: 260px;
-  max-width: 100%;            /* prevent overflow on tiny screens */
+  max-width: 100%;
   height: 30px;
   display: flex;
   align-items: center;
@@ -476,6 +478,7 @@ main {
   background: linear-gradient(90deg, #93c5fd, #2563eb);
 }
 
+/* both inputs overlap completely */
 .filter-range input[type="range"] {
   -webkit-appearance: none;
   appearance: none;
@@ -486,26 +489,47 @@ main {
   width: 100%;
   margin: 0;
   background: transparent;
+
+  /* important for overlapping sliders – only thumbs receive events */
+  pointer-events: none;
 }
 
+/* base track style */
 .filter-range input[type="range"]::-webkit-slider-runnable-track,
 .filter-range input[type="range"]::-moz-range-track {
   height: 4px;
   background: transparent;
 }
 
-.filter-range input[type="range"]::-webkit-slider-thumb,
-.filter-range input[type="range"]::-moz-range-thumb {
+/* base thumb reset for both sliders */
+#yearMin::-webkit-slider-thumb,
+#yearMax::-webkit-slider-thumb,
+#yearMin::-moz-range-thumb,
+#yearMax::-moz-range-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 14px;
-  height: 14px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
-  background: #2563eb;
   border: 2px solid #eff6ff;
   box-shadow: 0 0 0 3px rgba(191,219,254,0.8);
   cursor: pointer;
-  margin-top: -5px;
+  margin-top: -7px;
+  pointer-events: auto; /* thumbs can be dragged */
+}
+
+/* left slider (min year): round, lighter blue */
+#yearMin::-webkit-slider-thumb,
+#yearMin::-moz-range-thumb {
+  border-radius: 50%;
+  background: #2563eb;
+}
+
+/* right slider (max year): rounded square, darker blue */
+#yearMax::-webkit-slider-thumb,
+#yearMax::-moz-range-thumb {
+  border-radius: 6px;
+  background: #1d4ed8;
 }
 
 #yearLabel {
@@ -1039,19 +1063,16 @@ footer {
     justify-content: center;
   }
 
-  /* --- PUBLICATIONS: turn carousel into a simple list on phones --- */
+  /* --- PUBLICATIONS ON PHONE: LIST, NOT CAROUSEL --- */
 
-  /* stack everything, no side columns for arrows */
   .pubs-carousel {
-    display: block;
+    display: block;          /* no side columns */
   }
 
-  /* hide arrows on phone */
   .carousel-arrow {
-    display: none;
+    display: none;           /* hide arrows on phone */
   }
 
-  /* vertical list of cards */
   .pubs-grid {
     margin-top: 0.8rem;
     display: flex;
@@ -1059,7 +1080,7 @@ footer {
     gap: 1rem;
   }
 
-  /* always show cards (override JS display:none) */
+  /* always show all cards even if JS sets display:none */
   .pub-card {
     flex: none;
     width: 100%;
@@ -1099,7 +1120,7 @@ footer {
 
   .page::before,
   .page::after {
-    opacity: 0.3; /* slightly calmer background on small screens */
+    opacity: 0.3; /* calmer background on small screens */
   }
 }
 
@@ -1124,11 +1145,6 @@ footer {
   .hero-photo {
     width: 180px;
     height: 180px;
-  }
-
-  .carousel-arrow {
-    font-size: 1.6rem;
-    padding: 0.3rem;
   }
 
   .section-heading h2 {

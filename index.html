@@ -489,6 +489,7 @@
         function onChange() {
           normalizeYears();
           applyFilters();
+          updateZIndex(); 
         }
 
         yearMin.addEventListener("input", onChange);
@@ -702,6 +703,17 @@
           year: "numeric",
         });
         span.textContent = formatter.format(d);
+      }
+
+      function updateZIndex() {
+        // When handles are close, put the min slider on top so you can still grab it
+        if (parseInt(yearMin.value, 10) >= parseInt(yearMax.value, 10) - 1) {
+          yearMin.style.zIndex = 3;
+          yearMax.style.zIndex = 2;
+        } else {
+          yearMin.style.zIndex = 2;
+          yearMax.style.zIndex = 3;
+        }
       }
 
       /* Init */
