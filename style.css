@@ -449,6 +449,37 @@ main {
   font-weight: 500;
 }
 
+/* year label text under slider */
+#yearLabel {
+  font-size: 0.85rem;
+  color: var(--text-main);
+  margin-top: 0.35rem;   /* small space under the slider */
+}
+
+/* tag select styling */
+#tagFilter {
+  padding: 0.25rem 0.9rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+  font-size: 0.85rem;
+  color: var(--text-main);
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  margin-top: 0.55rem;   /* move it down so it's more in line with slider */
+}
+
+/* on wider screens, keep the tag group left-aligned and slightly wider */
+.filter-group:last-child {
+  align-items: flex-start;
+  text-align: left;
+  min-width: 170px;
+}
+
+
 /* ----------------------------------------------------------
    DUAL RANGE SLIDER (YEAR)
 ----------------------------------------------------------- */
@@ -995,6 +1026,47 @@ footer {
   }
 }
 
+/* ----------------------------------------------------------
+   ALIGN FILTER GROUPS (Year ⟷ Tag)
+----------------------------------------------------------- */
+
+/* Put both labels on the same line */
+.filter-bar {
+  align-items: flex-start;
+}
+
+/* Make both filter groups structured the same:
+   label (row 1)
+   control (row 2)
+   spacer (row 3) */
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%; 
+}
+
+/* TAG COLUMN — add a fake spacer so heights match YEAR column */
+.filter-group.tag-group::after {
+  content: "";
+  display: block;
+  height: 1.4rem;   /* same visual height as the yearLabel line */
+  visibility: hidden;
+}
+
+/* Align the tag filter control with the slider */
+#tagFilter {
+  margin-top: 0.55rem; /* aligns dropdown with the slider handle row */
+}
+
+/* YEAR LABEL under slider */
+#yearLabel {
+  margin-top: 0.4rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+
 /* Phones & small tablets in portrait */
 @media (max-width: 640px) {
   header {
@@ -1048,6 +1120,16 @@ footer {
     justify-content: center;
   }
 
+  .filter-group:nth-child(2) {
+  align-items: flex-start;
+}
+.filter-group:nth-child(2)::after {
+  content: "";
+  display: block;
+  height: 1.4rem;
+  visibility: hidden;
+}
+
   /* --- PUBLICATIONS ON PHONE: LIST, NOT CAROUSEL --- */
 
   .pubs-carousel {
@@ -1072,7 +1154,6 @@ footer {
     display: block;
   }
 
-
   .filter-bar {
     flex-direction: column;
     align-items: stretch;
@@ -1085,6 +1166,11 @@ footer {
   }
 
   .filter-range {
+    width: 100%;
+  }
+
+  /* make tag filter full width on phones */
+  #tagFilter {
     width: 100%;
   }
 
