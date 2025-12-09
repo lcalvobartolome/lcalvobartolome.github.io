@@ -58,10 +58,13 @@
             <p class="hero-tagline">
               Hi, I'm Lorena :) So far my work has focused on topic models and
               scalable NLP systems that support real-world decisions, especially
-              in the Science, Technology, and Innovation (STI) domain, where analysts need to understand large, messy document collections to guide
-              decisions.
+              in the Science, Technology, and Innovation (STI) domain, where
+              analysts need to understand large, messy document collections to
+              guide decisions.
               <br /><br />
-              I'm now aiming to extend this line into youth mental health: designing NLP-based tools that help practitioners identify which social and emotional factors drive risk in young people, and where
+              I'm now aiming to extend this line into youth mental health:
+              designing NLP-based tools that help practitioners identify which
+              social and emotional factors drive risk in young people, and where
               timely interventions could prevent crises rather than just react
               to them.
             </p>
@@ -231,6 +234,10 @@
       let leftArrow = null;
       let rightArrow = null;
 
+      function isMobileView() {
+        return window.matchMedia("(max-width: 640px)").matches;
+      }
+
       /* Rotating hero word */
       function initRotatingWord() {
         const el = document.getElementById("hero-word");
@@ -392,17 +399,26 @@
       function updateCarouselArrows() {
         if (!leftArrow || !rightArrow) return;
 
+        // On mobile we hide arrows via CSS; just disable them in JS too
+        if (isMobileView()) {
+          leftArrow.disabled = true;
+          rightArrow.disabled = true;
+          return;
+        }
+
         if (!filteredCards.length || filteredCards.length <= PAGE_SIZE) {
           leftArrow.disabled = true;
           rightArrow.disabled = true;
           return;
         }
+
         leftArrow.disabled = currentStartIndex === 0;
         rightArrow.disabled =
           currentStartIndex + PAGE_SIZE >= filteredCards.length;
       }
 
       function updateCarousel() {
+        // hide everything first
         allCards.forEach((card) => {
           card.style.display = "none";
         });
@@ -412,13 +428,22 @@
           return;
         }
 
-        const visibleSlice = filteredCards.slice(
-          currentStartIndex,
-          currentStartIndex + PAGE_SIZE
-        );
-        visibleSlice.forEach((card) => {
-          card.style.display = "";
-        });
+        if (isMobileView()) {
+          // On phone: show ALL filtered cards as a vertical list
+          filteredCards.forEach((card) => {
+            card.style.display = "";
+          });
+          currentStartIndex = 0; // reset for when user rotates/resizes
+        } else {
+          // Desktop / tablet: keep paging behaviour
+          const visibleSlice = filteredCards.slice(
+            currentStartIndex,
+            currentStartIndex + PAGE_SIZE
+          );
+          visibleSlice.forEach((card) => {
+            card.style.display = "";
+          });
+        }
 
         updateCarouselArrows();
       }
@@ -465,6 +490,19 @@
           updateHighlight();
         }
 
+        // Make sure the min thumb is still reachable when close to max
+        function updateZIndex() {
+          const min = parseInt(yearMin.value, 10);
+          const max = parseInt(yearMax.value, 10);
+          if (min >= max) {
+            yearMin.style.zIndex = "3";
+            yearMax.style.zIndex = "2";
+          } else {
+            yearMin.style.zIndex = "2";
+            yearMax.style.zIndex = "3";
+          }
+        }
+
         function applyFilters() {
           const min = parseInt(yearMin.value, 10);
           const max = parseInt(yearMax.value, 10);
@@ -488,8 +526,8 @@
 
         function onChange() {
           normalizeYears();
+          updateZIndex();
           applyFilters();
-          updateZIndex(); 
         }
 
         yearMin.addEventListener("input", onChange);
@@ -497,6 +535,7 @@
         tagFilter.addEventListener("change", applyFilters);
 
         normalizeYears();
+        updateZIndex();
         applyFilters();
       }
 
@@ -705,17 +744,6 @@
         span.textContent = formatter.format(d);
       }
 
-      function updateZIndex() {
-        // When handles are close, put the min slider on top so you can still grab it
-        if (parseInt(yearMin.value, 10) >= parseInt(yearMax.value, 10) - 1) {
-          yearMin.style.zIndex = 3;
-          yearMax.style.zIndex = 2;
-        } else {
-          yearMin.style.zIndex = 2;
-          yearMax.style.zIndex = 3;
-        }
-      }
-
       /* Init */
       document.addEventListener("DOMContentLoaded", () => {
         initRotatingWord();
@@ -724,7 +752,12 @@
         loadTeaching();
         loadStudentsInfo();
         setLastUpdated();
+
+        window.addEventListener("resize", () => {
+          updateCarousel();
+        });
       });
     </script>
+
   </body>
 </html>
