@@ -454,6 +454,7 @@ main {
 .filter-range {
   position: relative;
   width: 260px;
+  max-width: 100%;            /* prevent overflow on tiny screens */
   height: 30px;
   display: flex;
   align-items: center;
@@ -936,7 +937,20 @@ footer {
    RESPONSIVE
 ----------------------------------------------------------- */
 
+/* Tablets & small laptops */
 @media (max-width: 920px) {
+  .page {
+    padding: 1.4rem 1.1rem 2.5rem;
+  }
+
+  header {
+    align-items: flex-start;
+  }
+
+  nav ul {
+    justify-content: flex-start;
+  }
+
   .hero-combined {
     grid-template-columns: minmax(0, 1fr);
     padding: 1.7rem 1.7rem 1.9rem;
@@ -944,6 +958,10 @@ footer {
 
   .hero-profile {
     justify-self: flex-start;
+  }
+
+  .hero-title {
+    font-size: 2rem; /* slightly smaller for tablets */
   }
 
   .pubs-grid {
@@ -954,12 +972,71 @@ footer {
     border-radius: 18px;
     align-items: flex-start;
   }
+
+  /* Expanded pub card: stack image above text on narrower screens */
+  .pub-card.expanded {
+    flex-direction: column;
+  }
+
+  .pub-card.expanded .pub-header-img {
+    width: 100%;
+    max-width: none;
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+  }
 }
 
+/* Phones & small tablets in portrait */
 @media (max-width: 640px) {
   header {
     flex-direction: column;
     align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .logo-wordmark {
+    gap: 0.6rem;
+  }
+
+  .logo-text-main {
+    font-size: 0.8rem;
+  }
+
+  .logo-text-sub {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+  }
+
+  nav ul {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  nav a {
+    font-size: 0.88rem;
+    padding-inline: 0.75rem;
+  }
+
+  .hero-combined {
+    padding: 1.4rem 1.3rem 1.6rem;
+    border-radius: 20px;
+  }
+
+  .hero-title {
+    font-size: 1.7rem;
+  }
+
+  .hero-tagline {
+    font-size: 0.96rem;
+  }
+
+  .hero-links {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-links a {
+    justify-content: center;
   }
 
   .pubs-grid {
@@ -968,6 +1045,74 @@ footer {
 
   .filter-bar {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
+    border-radius: 18px;
+  }
+
+  .filter-group {
+    text-align: left;
+    align-items: stretch;
+  }
+
+  .filter-range {
+    width: 100%;
+  }
+
+  .pub-modal-card {
+    max-width: 100%;
+  }
+
+  .pub-modal {
+    padding: 1rem;
+  }
+
+  .course-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ideas-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .page::before,
+  .page::after {
+    opacity: 0.3; /* slightly calmer background on small screens */
+  }
+}
+
+/* Very small phones */
+@media (max-width: 480px) {
+  .page {
+    padding-inline: 0.9rem;
+  }
+
+  .hero-combined {
+    padding: 1.2rem 1.1rem 1.4rem;
+  }
+
+  .hero-title {
+    font-size: 1.55rem;
+  }
+
+  .hero-profile {
+    max-width: 200px;
+  }
+
+  .hero-photo {
+    width: 180px;
+    height: 180px;
+  }
+
+  .carousel-arrow {
+    font-size: 1.6rem;
+    padding: 0.3rem;
+  }
+
+  .section-heading h2 {
+    font-size: 1.35rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.95rem;
   }
 }
