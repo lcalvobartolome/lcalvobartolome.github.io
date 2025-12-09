@@ -1,0 +1,37 @@
+[
+{
+  "id": "youth-mental-health-trajectories",
+  "icon": "🧠",
+  "title": "NLP for youth mental health",
+  "summary": "Use NLP models and causal methods to understand how adolescents' emotional and social states evolve over time, and which factors genuinely drive risk.",
+  "tags": [
+    "NLP for mental health",
+    "longitudinal modelling",
+    "causal ML",
+    "youth wellbeing",
+    "decision support"
+  ]
+},
+{
+  "id": "usable-topic-models",
+  "icon": "🗂️",
+  "title": "Making topic models more usable for real analysts",
+  "summary": "Extend my previous work on topic models and evaluation: desgining algorithms for the automatic corpus preparation, interactive interfaces for exploring topics, or workflows that let human experts iteratively refine models instead of treating them as black boxes.",
+  "tags": [
+    "topic models",
+    "HCI",
+    "evaluation"
+  ]
+},
+{
+  "id": "sti-policy-tools",
+  "icon": "📚",
+  "title": "NLP pipelines for scientific & policy intelligence",
+  "summary": "Build tools that help analysts navigate scientific publications and policy-relevant documents: contradiction detection, evolution of themes in a field, or detecting emerging areas and risks.",
+  "tags": [
+    "scientific NLP",
+    "analytics tooling",
+    "STI & policy"
+  ]
+}
+]

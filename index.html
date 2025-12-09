@@ -1,30 +1,712 @@
----
-layout: default
-title : Homepage
-navbar_title: Home
----
-{% include widgets/profile_card.html %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lorena Calvo-Bartolomé</title>
 
-{% include widgets/debug_repo_name.html %}
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Academic homepage of Lorena Calvo-Bartolomé – multilingual NLP, evaluation, and human-centered language technologies."
+    />
 
-{% include widgets/debug_url.html %}
+    <!-- 🐒 favicon as inline SVG -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>🐒</text></svg>"
+    />
 
-{% if site.data.display.homepage.show_experience %}
-    {% include widgets/experience_card.html %}
-{% endif %}
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-{% if site.data.display.homepage.show_news %}
-    {% assign count_news = site.news | size %}
-    {% if count_news > 0 %}
-        {% include widgets/news_card.html limit=site.data.display.homepage.num_news %}
-    {% endif %}
-{% endif %}
+  <body>
+    <div class="page" id="top">
+      <!-- NAV -->
+      <header>
+        <div class="logo-wordmark">
+          <div class="logo-circle" aria-hidden="true"></div>
+          <div>
+            <div class="logo-text-main">Lorena Calvo-Bartolomé 🐒</div>
+            <div class="logo-text-sub">Words · Languages · Code</div>
+          </div>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#research">Research / Publications</a></li>
+            <li><a href="#teaching">Teaching</a></li>
+            <li><a href="#students">Students / About</a></li>
+          </ul>
+        </nav>
+      </header>
 
-{% if site.data.display.homepage.show_selected_publications %}
-    {% assign pubs = site.publications | sort: "date" | reverse | where: "selected", true %}
-    {% 
-        include widgets/publication_card.html 
-        publications=pubs
-        title='<i class="fas fa-star"></i> Selected Publications'
-    %}
-{% endif %}
+      <main>
+        <!-- HERO -->
+        <section class="section hero-combined">
+          <div class="hero-text">
+            <div class="hero-intro-line">
+              <span class="hero-intro-dot"></span>
+              <span>Building language technologies that serve people</span>
+            </div>
+
+            <h1 class="hero-title">
+              I design computational models that help us understand
+              <span id="hero-word" class="hero-tagline-word">emotions</span>.
+            </h1>
+
+            <p class="hero-tagline">
+              Hi, I'm Lorena. So far my work has focused on topic models and
+              scalable NLP systems that support real-world decisions,
+              especially in Science, Technology, and Innovation (STI), where
+              analysts need to understand large, messy document collections to
+              guide decisions.
+              <br /><br />
+              I'm now extending this line into mental health: designing
+              NLP-based tools that help practitioners identify which social and
+              emotional factors genuinely drive risk in young people, and where
+              timely interventions could prevent crises rather than just react
+              to them.
+            </p>
+
+            <div class="hero-links">
+              <a href="mailto:lcalvo@pa.uc3m.es">
+                lcalvo@pa.uc3m.es <span>· email</span>
+              </a>
+              <a href="cv.pdf" target="_blank" rel="noopener">
+                CV <span>· pdf</span>
+              </a>
+              <a
+                href="https://scholar.google.com/citations?user=qtRz6ksAAAAJ&hl=en"
+                target="_blank"
+                rel="noopener"
+              >
+                Scholar <span>· papers</span>
+              </a>
+              <a
+                href="https://github.com/lcalvobartolome"
+                target="_blank"
+                rel="noopener"
+              >
+                GitHub <span>· code</span>
+              </a>
+            </div>
+          </div>
+
+          <aside class="hero-profile" aria-label="Profile photo">
+            <div class="hero-photo">
+              <img src="img/portrait2.png" alt="Lorena Calvo-Bartolomé" />
+            </div>
+          </aside>
+        </section>
+
+        <!-- RESEARCH + PUBLICATIONS -->
+        <section class="section" id="research">
+          <div class="research-header">
+            <div class="section-heading">
+              <div class="section-icon" aria-hidden="true"></div>
+              <h2>Research & selected publications</h2>
+            </div>
+
+            <p class="section-subtitle">
+              Methodologically, my research sits at the intersection of NLP and
+              human-computer interaction. I've worked on making topic models and
+              related tools more usable for end users: evaluation protocols that
+              reflect real tasks, interactive systems for exploring large text
+              collections, and interfaces that let experts guide models rather
+              than just consume their output. More recently, I'm adapting these
+              ideas to youth mental health, where we need interpretable models
+              of how social and emotional contexts shape risk over time.
+            </p>
+
+            <!-- Filters -->
+            <div class="filter-bar">
+              <div class="filter-group">
+                <label for="yearMin">Filter by year</label>
+                <div class="filter-range">
+                  <div class="range-track"></div>
+                  <div class="range-highlight" id="rangeHighlight"></div>
+                  <input
+                    type="range"
+                    id="yearMin"
+                    min="2020"
+                    max="2025"
+                    value="2023"
+                  />
+                  <input
+                    type="range"
+                    id="yearMax"
+                    min="2020"
+                    max="2025"
+                    value="2025"
+                  />
+                </div>
+                <span id="yearLabel">2023–2025</span>
+              </div>
+
+              <div class="filter-group">
+                <label for="tagFilter">or tag</label>
+                <select id="tagFilter">
+                  <option value="all">all</option>
+                  <option value="multi">multilingual</option>
+                  <option value="eval">evaluation</option>
+                  <option value="tooling">tools</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pubs carousel -->
+          <div class="pubs-carousel">
+            <button
+              class="carousel-arrow carousel-arrow-left"
+              type="button"
+              aria-label="Previous publications"
+            >
+              ‹
+            </button>
+
+            <section
+              class="pubs-grid"
+              id="pubsGrid"
+              aria-label="Selected publications"
+            ></section>
+
+            <button
+              class="carousel-arrow carousel-arrow-right"
+              type="button"
+              aria-label="Next publications"
+            >
+              ›
+            </button>
+          </div>
+        </section>
+
+        <!-- TEACHING -->
+        <section class="section card-section" id="teaching">
+          <div class="section-heading">
+            <div class="section-icon" aria-hidden="true"></div>
+            <h2>Teaching</h2>
+          </div>
+
+          <p class="section-subtitle" id="teachingIntro"></p>
+          <div class="course-list" id="courseList"></div>
+        </section>
+
+        <!-- STUDENTS / ABOUT -->
+        <section class="section card-section" id="students">
+          <div class="section-heading">
+            <div class="section-icon" aria-hidden="true"></div>
+            <h2>For students & collaborators</h2>
+          </div>
+
+          <p class="section-subtitle" id="studentsIntro"></p>
+          <div class="student-lines" id="studentLines"></div>
+          <p class="section-subtitle" id="studentsFocus"></p>
+
+          <a class="ideas-button" id="ideasButton" href="projects.html">
+            Current project ideas →
+          </a>
+        </section>
+      </main>
+
+      <footer>
+        Last updated: <span id="lastUpdated"></span> · Built for GitHub Pages.
+      </footer>
+    </div>
+
+    <!-- PUBLICATION MODAL -->
+    <div class="pub-modal" id="pubModal" aria-hidden="true">
+      <div class="pub-modal-card">
+        <div class="pub-modal-inner">
+          <button class="modal-close" type="button" aria-label="Close">×</button>
+          <div id="pubModalContent"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCRIPT -->
+    <script>
+      const PAGE_SIZE = 3;
+      let allCards = [];
+      let filteredCards = [];
+      let currentStartIndex = 0;
+      let leftArrow = null;
+      let rightArrow = null;
+
+      /* Rotating hero word */
+      function initRotatingWord() {
+        const el = document.getElementById("hero-word");
+        if (!el) return;
+        const words = [
+          "emotions",
+          "mental health",
+          "language",
+          "behaviour",
+          "well-being"
+        ];
+        let idx = 0;
+        setInterval(() => {
+          idx = (idx + 1) % words.length;
+          el.style.opacity = "0";
+          el.style.transform = "translateY(4px)";
+          setTimeout(() => {
+            el.textContent = words[idx];
+            el.style.opacity = "1";
+            el.style.transform = "translateY(0)";
+          }, 150);
+        }, 2200);
+      }
+
+      /* Build one publication card from JSON */
+      function buildPubCard(pub) {
+        const article = document.createElement("article");
+        article.className = "pub-card";
+        article.id = pub.id;
+        article.dataset.year = pub.year;
+        article.dataset.tags = (pub.tags || []).join(",");
+
+        const img = document.createElement("img");
+        img.className = "pub-header-img";
+        img.src = pub.thumb;
+        img.alt = pub.title + " thumbnail";
+        article.appendChild(img);
+
+        const body = document.createElement("div");
+        body.className = "pub-body";
+
+        const badgeRow = document.createElement("div");
+        badgeRow.className = "pub-badge-row";
+
+        const venueSpan = document.createElement("span");
+        venueSpan.textContent = pub.venue;
+        badgeRow.appendChild(venueSpan);
+
+        if (pub.badge) {
+          const badge = document.createElement("span");
+          badge.className = "pub-badge";
+          badge.textContent = pub.badge;
+          badgeRow.appendChild(badge);
+        }
+        body.appendChild(badgeRow);
+
+        const h3 = document.createElement("h3");
+        h3.className = "pub-title";
+        h3.textContent = pub.title;
+        body.appendChild(h3);
+
+        const authors = document.createElement("div");
+        authors.className = "pub-authors";
+        authors.textContent = (pub.authors || []).join(", ");
+        body.appendChild(authors);
+
+        if (pub.summary) {
+          const summary = document.createElement("div");
+          summary.className = "pub-summary";
+          summary.textContent = pub.summary;
+          body.appendChild(summary);
+        }
+
+        if (pub.tags && pub.tags.length) {
+          const tagsWrap = document.createElement("div");
+          tagsWrap.className = "pub-tags";
+          const labelMap = {
+            multi: "multilingual",
+            eval: "evaluation",
+            hci: "HCI / users",
+            tooling: "tools"
+          };
+          pub.tags.forEach((tag) => {
+            const pill = document.createElement("span");
+            pill.className = "pub-tag-pill";
+            pill.textContent = labelMap[tag] || tag;
+            tagsWrap.appendChild(pill);
+          });
+          body.appendChild(tagsWrap);
+        }
+
+        if (pub.links && pub.links.length) {
+          const linksRow = document.createElement("div");
+          linksRow.className = "pub-links-row";
+
+          pub.links.forEach((link) => {
+            if (["paper", "github", "hf"].includes(link.type)) {
+              const a = document.createElement("a");
+              a.className = "pub-link-icon";
+              a.href = link.href;
+              a.target = "_blank";
+              a.rel = "noopener";
+
+              const span = document.createElement("span");
+              if (link.type === "paper") {
+                span.textContent = "[paper]";
+                a.setAttribute("aria-label", "Paper");
+              } else if (link.type === "github") {
+                span.textContent = "[code]";
+                a.setAttribute("aria-label", "GitHub repository");
+              } else if (link.type === "hf") {
+                span.textContent = "[HuggingFace]";
+                a.setAttribute("aria-label", "Hugging Face model");
+              }
+              a.appendChild(span);
+              linksRow.appendChild(a);
+            } else {
+              const a = document.createElement("a");
+              a.href = link.href;
+              a.target = "_blank";
+              a.rel = "noopener";
+              a.textContent = link.href;
+              linksRow.appendChild(a);
+            }
+          });
+
+          body.appendChild(linksRow);
+        }
+
+        article.appendChild(body);
+        return article;
+      }
+
+      /* Carousel arrows */
+      function initCarouselArrows() {
+        leftArrow = document.querySelector(".carousel-arrow-left");
+        rightArrow = document.querySelector(".carousel-arrow-right");
+        if (!leftArrow || !rightArrow) return;
+
+        leftArrow.addEventListener("click", () => moveCarousel(-1));
+        rightArrow.addEventListener("click", () => moveCarousel(1));
+
+        updateCarouselArrows();
+      }
+
+      function moveCarousel(step) {
+        if (!filteredCards.length) return;
+        const maxStart = Math.max(filteredCards.length - PAGE_SIZE, 0);
+        currentStartIndex = Math.min(
+          Math.max(currentStartIndex + step, 0),
+          maxStart
+        );
+        updateCarousel();
+      }
+
+      function updateCarouselArrows() {
+        if (!leftArrow || !rightArrow) return;
+
+        if (!filteredCards.length || filteredCards.length <= PAGE_SIZE) {
+          leftArrow.disabled = true;
+          rightArrow.disabled = true;
+          return;
+        }
+        leftArrow.disabled = currentStartIndex === 0;
+        rightArrow.disabled =
+          currentStartIndex + PAGE_SIZE >= filteredCards.length;
+      }
+
+      function updateCarousel() {
+        allCards.forEach((card) => {
+          card.style.display = "none";
+        });
+
+        if (!filteredCards.length) {
+          updateCarouselArrows();
+          return;
+        }
+
+        const visibleSlice = filteredCards.slice(
+          currentStartIndex,
+          currentStartIndex + PAGE_SIZE
+        );
+        visibleSlice.forEach((card) => {
+          card.style.display = "";
+        });
+
+        updateCarouselArrows();
+      }
+
+      /* Filters */
+      function initFilters() {
+        const yearMin = document.getElementById("yearMin");
+        const yearMax = document.getElementById("yearMax");
+        const yearLabel = document.getElementById("yearLabel");
+        const highlight = document.getElementById("rangeHighlight");
+        const tagFilter = document.getElementById("tagFilter");
+
+        if (
+          !yearMin ||
+          !yearMax ||
+          !yearLabel ||
+          !highlight ||
+          !tagFilter ||
+          !allCards.length
+        )
+          return;
+
+        const minYear = parseInt(yearMin.min, 10);
+        const maxYear = parseInt(yearMax.max, 10);
+        const span = maxYear - minYear;
+
+        function updateHighlight() {
+          const min = parseInt(yearMin.value, 10);
+          const max = parseInt(yearMax.value, 10);
+          const leftPercent = ((min - minYear) / span) * 100;
+          const rightPercent = ((max - minYear) / span) * 100;
+          highlight.style.left = leftPercent + "%";
+          highlight.style.width = Math.max(rightPercent - leftPercent, 0) + "%";
+        }
+
+        function normalizeYears() {
+          let min = parseInt(yearMin.value, 10);
+          let max = parseInt(yearMax.value, 10);
+          if (min > max) {
+            max = min;
+            yearMax.value = String(max);
+          }
+          yearLabel.textContent = min + "–" + max;
+          updateHighlight();
+        }
+
+        function applyFilters() {
+          const min = parseInt(yearMin.value, 10);
+          const max = parseInt(yearMax.value, 10);
+          const tag = tagFilter.value;
+
+          filteredCards = allCards.filter((card) => {
+            const year = parseInt(card.dataset.year, 10);
+            const tags = (card.dataset.tags || "")
+              .split(",")
+              .map((t) => t.trim())
+              .filter(Boolean);
+
+            const yearOK = year >= min && year <= max;
+            const tagOK = tag === "all" || tags.includes(tag);
+            return yearOK && tagOK;
+          });
+
+          currentStartIndex = 0;
+          updateCarousel();
+        }
+
+        function onChange() {
+          normalizeYears();
+          applyFilters();
+        }
+
+        yearMin.addEventListener("input", onChange);
+        yearMax.addEventListener("input", onChange);
+        tagFilter.addEventListener("change", applyFilters);
+
+        normalizeYears();
+        applyFilters();
+      }
+
+      /* Smooth scrolling for nav */
+      function initSmoothScroll() {
+        const header = document.querySelector("header");
+        const links = document.querySelectorAll('nav a[href^="#"]');
+        if (!header || !links.length) return;
+
+        function scrollToId(id) {
+          const target = document.getElementById(id);
+          if (!target) return;
+          const headerHeight = header.offsetHeight;
+          const rect = target.getBoundingClientRect();
+          const offset = window.pageYOffset + rect.top - headerHeight - 16;
+          window.scrollTo({ top: offset, behavior: "smooth" });
+        }
+
+        links.forEach((link) => {
+          link.addEventListener("click", (e) => {
+            const href = link.getAttribute("href");
+            if (!href || !href.startsWith("#")) return;
+            const id = href.slice(1);
+            const target = document.getElementById(id);
+            if (!target) return;
+            e.preventDefault();
+            scrollToId(id);
+          });
+        });
+      }
+
+      /* Modal for expanded publication */
+      function initPubModal() {
+        const cards = Array.from(document.querySelectorAll(".pub-card"));
+        const modal = document.getElementById("pubModal");
+        const modalContent = document.getElementById("pubModalContent");
+        if (!modal || !modalContent) return;
+        const closeBtn = modal.querySelector(".modal-close");
+        if (!closeBtn) return;
+
+        function openModal(card) {
+          const clone = card.cloneNode(true);
+          clone.classList.add("expanded");
+          clone.style.cursor = "default";
+          modalContent.innerHTML = "";
+          modalContent.appendChild(clone);
+          modal.classList.add("open");
+          modal.setAttribute("aria-hidden", "false");
+        }
+
+        function closeModal() {
+          modal.classList.remove("open");
+          modal.setAttribute("aria-hidden", "true");
+          modalContent.innerHTML = "";
+        }
+
+        cards.forEach((card) => {
+          card.addEventListener("click", (e) => {
+            if (e.target.closest("a")) return;
+            openModal(card);
+          });
+        });
+
+        closeBtn.addEventListener("click", closeModal);
+        modal.addEventListener("click", (e) => {
+          if (e.target === modal) closeModal();
+        });
+
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && modal.classList.contains("open")) {
+            closeModal();
+          }
+        });
+      }
+
+      /* Load publications from JSON */
+      async function loadPublications() {
+        const grid = document.getElementById("pubsGrid");
+        if (!grid) return;
+
+        try {
+          const res = await fetch("publications.json");
+          if (!res.ok) {
+            throw new Error(
+              "HTTP " + res.status + " when fetching publications.json"
+            );
+          }
+          const pubs = await res.json();
+
+          pubs
+            .sort((a, b) => b.year - a.year)
+            .forEach((pub) => {
+              const card = buildPubCard(pub);
+              grid.appendChild(card);
+              allCards.push(card);
+            });
+
+          initCarouselArrows();
+          initFilters();
+          initPubModal();
+        } catch (err) {
+          console.error("Error loading publications.json", err);
+          grid.innerHTML = "<p>Could not load publications.</p>";
+        }
+      }
+
+      /* Teaching JSON */
+      async function loadTeaching() {
+        const introEl = document.getElementById("teachingIntro");
+        const listEl = document.getElementById("courseList");
+        if (!introEl || !listEl) return;
+
+        try {
+          const res = await fetch("teaching.json");
+          if (!res.ok) {
+            throw new Error("HTTP " + res.status + " when fetching teaching.json");
+          }
+          const data = await res.json();
+
+          introEl.textContent = data.intro || "";
+
+          (data.courses || []).forEach((course) => {
+            const card = document.createElement("article");
+            card.className = "course-card";
+
+            const h3 = document.createElement("h3");
+            h3.textContent = course.title;
+            card.appendChild(h3);
+
+            const meta = document.createElement("div");
+            meta.className = "course-meta";
+            meta.textContent = [course.role, course.institution, course.terms]
+              .filter(Boolean)
+              .join(" · ");
+            card.appendChild(meta);
+
+            if (course.url) {
+              const link = document.createElement("a");
+              link.className = "course-link";
+              link.href = course.url;
+              link.target = "_blank";
+              link.rel = "noopener";
+              link.textContent = "View course information ↗";
+              card.appendChild(link);
+            }
+
+            listEl.appendChild(card);
+          });
+        } catch (err) {
+          console.error("Error loading teaching.json", err);
+          listEl.innerHTML = "<p>Could not load teaching information.</p>";
+        }
+      }
+
+      /* Students JSON */
+      async function loadStudentsInfo() {
+        const introEl = document.getElementById("studentsIntro");
+        const linesEl = document.getElementById("studentLines");
+        const focusEl = document.getElementById("studentsFocus");
+        const ideasBtn = document.getElementById("ideasButton");
+        if (!introEl || !linesEl || !focusEl) return;
+
+        try {
+          const res = await fetch("students.json");
+          if (!res.ok) {
+            throw new Error("HTTP " + res.status + " when fetching students.json");
+          }
+          const data = await res.json();
+
+          introEl.textContent = data.intro || "";
+          focusEl.textContent = data.focus || "";
+
+          (data.lines || []).forEach((line) => {
+            const chip = document.createElement("div");
+            chip.className = "student-line-chip";
+            chip.textContent = line;
+            linesEl.appendChild(chip);
+          });
+
+          if (data.ideasUrl && ideasBtn) {
+            ideasBtn.href = data.ideasUrl;
+          }
+        } catch (err) {
+          console.error("Error loading students.json", err);
+          linesEl.innerHTML = "<p>Could not load student information.</p>";
+        }
+      }
+
+      /* Set footer "Last updated" from document.lastModified */
+      function setLastUpdated() {
+        const span = document.getElementById("lastUpdated");
+        if (!span) return;
+        const d = new Date(document.lastModified);
+        if (Number.isNaN(d.getTime())) {
+          span.textContent = "—";
+          return;
+        }
+        const formatter = new Intl.DateTimeFormat("en", {
+          month: "long",
+          year: "numeric"
+        });
+        span.textContent = formatter.format(d);
+      }
+
+      /* Init */
+      document.addEventListener("DOMContentLoaded", () => {
+        initRotatingWord();
+        initSmoothScroll();
+        loadPublications();
+        loadTeaching();
+        loadStudentsInfo();
+        setLastUpdated();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,146 @@
+[
+  {
+    "id": "parte1",
+    "year": 2025,
+    "tags": ["tooling", "eval"],
+    "venue": "Engineering Applications of Artificial Intelligence",
+    "badge": "topic models",
+    "title": "Topic models for decision-support systems. Part I: Training, representation and exploitation of topic models",
+    "authors": [
+      "Lorena Calvo-Bartolomé",
+      "Diamantis Tziotzios",
+      "Saúl Blanco-Fortes",
+      "David Pérez-Fernández",
+      "Jerónimo Arenas-García"
+    ],
+    "summary": "This paper presents tase, a platform for expert-guided topic modeling combining Bayesian and Neural models with an innovative Solr-based exploitation framework for decision-support systems. It introduces scalable indexing, semantic similarity tools, and two real-world STI use cases.",
+    "thumb": "img/nocluehowtocallyourpics.png",
+    "links": [
+      { "type": "paper", "href": "https://www.sciencedirect.com/science/article/pii/S0952197625014265" },
+      { "type": "github", "href": "https://github.com/IntelCompH2020/topicmodeler/tree/main" }
+    ]
+  },
+  {
+    "id": "proxann",
+    "year": 2025,
+    "tags": ["eval", "tooling"],
+    "venue": "ACL 2025",
+    "badge": "evaluation",
+    "title": "ProxAnn: Use-Oriented Evaluations of Topic Models and Document Clustering",
+    "authors": [
+      "Alexander Hoyle",
+      "Lorena Calvo-Bartolomé",
+      "Jordan Boyd-Graber",
+      "Philip Resnik"
+    ],
+    "summary": "This paper proposes a scalable human evaluation protocol and automated approximation for judging topic models and clustering systems under real-world user behavior. LLM proxies achieve performance comparable to human annotators.",
+    "thumb": "img/proxann.png",
+    "links": [
+      { "type": "paper", "href": "https://aclanthology.org/2025.acl-long.772/" },
+      { "type": "github", "href": "https://github.com/ahoho/proxann" }
+    ]
+  },
+  {
+    "id": "bass",
+    "year": 2025,
+    "tags": ["eval", "multi", "tooling"],
+    "venue": "ACL 2025",
+    "badge": "topic models",
+    "title": "Large Language Models Struggle to Describe the Haystack without Human Help: A Social Science-Inspired Evaluation of Large Research Language Models",
+    "authors": [
+      "Zongxia Li",
+      "Lorena Calvo-Bartolomé",
+      "Alexander Hoyle",
+      "Paiheng Xu",
+      "Daniel Stephens",
+      "Alden Dima",
+      "Juan Francisco Fung",
+      "Jordan Lee Boyd-Graber"
+    ],
+    "summary": "This study evaluates how users learn from LLM-based topic models versus traditional models. LLM-generated topics are readable but often overly generic; human supervision alleviates hallucination. Traditional LDA remains effective despite being less user-friendly.",
+    "thumb": "img/bass.png",
+    "links": [
+      { "type": "paper", "href": "https://aclanthology.org/2025.acl-long.375/" },
+      { "type": "hf", "href": "https://huggingface.co/datasets/zli12321/Bills" }
+    ]
+  },
+  {
+    "id": "parte2",
+    "year": 2025,
+    "tags": ["tooling", "eval"],
+    "venue": "Engineering Applications of Artificial Intelligence",
+    "badge": "hierarchical topic models",
+    "title": "Topic models for decision-support systems, Part II: Expert-in-the-loop hierarchical topic models",
+    "authors": [
+      "Lorena Calvo-Bartolomé",
+      "Jerónimo Arenas-García"
+    ],
+    "summary": "This work introduces WS and DS, two expert-in-the-loop hierarchical topic modeling algorithms enabling domain experts to refine topic structures. The methods simplify tuning and integrate into IntelComp’s toolkit, showing strong performance across scientific datasets.",
+    "thumb": "img/representation_WS_DS_new_left.png",
+    "links": [
+      { "type": "paper", "href": "https://www.sciencedirect.com/science/article/pii/S0952197625015106" },
+      { "type": "github", "href": "https://github.com/lcalvobartolome/UserInLoopHTM" }
+    ]
+  },
+  {
+    "id": "case",
+    "year": 2025,
+    "tags": ["tooling"],
+    "venue": "COLING 2025",
+    "badge": "decision support",
+    "title": "CASE: Large Scale Topic Exploitation for Decision Support Systems",
+    "authors": [
+      "Lorena Calvo-Bartolomé",
+      "Jerónimo Arenas-García",
+      "David Pérez-Fernández"
+    ],
+    "summary": "CASE introduces a Solr-based architecture for exploiting topic models at scale, enabling semantic search, topic inference, and STI indicator generation. Demonstrated through two real-world policy-support scenarios.",
+    "thumb": "img/case_architecture.png",
+    "links": [
+      { "type": "paper", "href": "https://aclanthology.org/2025.coling-demos.15.pdf" },
+      { "type": "github", "href": "https://github.com/lcalvobartolome/CASE" }
+    ]
+  },
+  {
+    "id": "mind",
+    "year": 2025,
+    "tags": ["multi", "eval"],
+    "venue": "EMNLP 2025",
+    "badge": "multilingual QA",
+    "title": "Discrepancy Detection at the Data Level: Toward Consistent Multilingual Question Answering",
+    "authors": [
+      "Lorena Calvo-Bartolomé",
+      "Valérie Aldana",
+      "Karla Cantarero",
+      "Alonso Madroñal de Mesa",
+      "Jerónimo Arenas-García",
+      "Jordan Lee Boyd-Graber"
+    ],
+    "summary": "MIND introduces a user-in-the-loop fact-checking pipeline for detecting factual and cultural inconsistencies in multilingual QA systems. Evaluated across datasets and domains, it identifies culturally-dependent divergences in QA responses.",
+    "thumb": "img/mind.png",
+    "links": [
+      { "type": "paper", "href": "https://arxiv.org/pdf/2510.11928" },
+      { "type": "github", "href": "https://github.com/lcalvobartolome/mind" },
+      { "type": "hf", "href": "https://huggingface.co/collections/lcalvobartolomome/mind-68e2a690025b4dc28c5e8458" }
+    ]
+  },
+  {
+    "id": "itmt",
+    "year": 2023,
+    "tags": ["tooling"],
+    "venue": "EACL 2023",
+    "badge": "demo",
+    "title": "ITMT: Interactive Topic Model Trainer",
+    "authors": [
+      "Lorena Calvo-Bartolomé",
+      "Jose Antonio Espinosa Melchor",
+      "Jerónimo Arenas-García"
+    ],
+    "summary": "ITMT is a GUI-driven tool enabling domain experts to train and refine topic models interactively, integrating classical and neural topic modeling libraries. The tool simplifies optimization and comparison across models.",
+    "thumb": "img/tmting.png",
+    "links": [
+      { "type": "paper", "href": "https://aclanthology.org/2023.eacl-demo.6/" },
+      { "type": "github", "href": "https://github.com/IntelCompH2020/topicmodeler" }
+    ]
+  }
+]

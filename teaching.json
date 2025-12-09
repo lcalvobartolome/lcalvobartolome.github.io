@@ -1,0 +1,29 @@
+{
+  "intro": "I have been co-teaching courses at Universidad Carlos III de Madrid since 2022. Here are the main courses I have / am curren involved in:",
+  "courses": [
+    {
+      "id": "nlp",
+      "title": "Natural Language Processing",
+      "role": "Co-instructor",
+      "institution": "Universidad Carlos III de Madrid",
+      "terms": "Winter 2022-2024",
+      "url": "https://aplicaciones.uc3m.es/cpa/generaFicha?est=378&anio=2025&plan=475&asig=19211&idioma=2"
+    },
+    {
+      "id": "data-processing",
+      "title": "Data Processing",
+      "role": "Co-instructor",
+      "institution": "Universidad Carlos III de Madrid",
+      "terms": "Winter 2023-2025",
+      "url": "https://aplicaciones.uc3m.es/cpa/generaFicha?est=227&anio=2025&plan=171&asig=14311&idioma=2"
+    },
+    {
+      "id": "detection-estimation",
+      "title": "Modern Theory of Detection and Estimation",
+      "role": "Co-instructor",
+      "institution": "Universidad Carlos III de Madrid",
+      "terms": "Winter 2022",
+      "url": "https://aplicaciones.uc3m.es/cpa/generaFicha?est=252&plan=445&asig=15938&idioma=2"
+    }
+  ]
+}

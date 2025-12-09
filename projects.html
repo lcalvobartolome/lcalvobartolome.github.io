@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Project Ideas – Lorena Bartolomé</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- Simple header reusing your style -->
+    <header>
+      <div class="logo-wordmark">
+        <div class="logo-circle" aria-hidden="true"></div>
+        <div>
+          <div class="logo-text-main">Lorena Bartolomé</div>
+          <div class="logo-text-sub">Language · Emotion · Systems</div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html#top">Home</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section card-section">
+        <div class="section-heading">
+          <div class="section-icon" aria-hidden="true"></div>
+          <h2>Current project ideas</h2>
+        </div>
+
+        <p class="section-subtitle">
+          These are examples of directions I’m excited to supervise.  
+          Each idea can be adapted to bachelor’s, master’s, or short research projects.
+        </p>
+
+        <!-- ideas grid populated from ideas.json -->
+        <div class="ideas-grid" id="ideasGrid" aria-label="Current project ideas"></div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // Build one idea card from JSON
+    function buildIdeaCard(idea) {
+      const card = document.createElement("article");
+      card.className = "idea-card";
+      card.id = idea.id;
+
+      const h3 = document.createElement("h3");
+      h3.textContent = (idea.icon ? idea.icon + " " : "") + idea.title;
+      card.appendChild(h3);
+
+      const p = document.createElement("p");
+      p.textContent = idea.summary;
+      card.appendChild(p);
+
+      if (idea.tags && idea.tags.length) {
+        const tagsWrap = document.createElement("div");
+        tagsWrap.className = "idea-tags";
+        idea.tags.forEach(tag => {
+          const span = document.createElement("span");
+          span.textContent = tag;
+          tagsWrap.appendChild(span);
+        });
+        card.appendChild(tagsWrap);
+      }
+
+      return card;
+    }
+
+    // Load ideas.json and render
+    async function loadIdeas() {
+      const grid = document.getElementById("ideasGrid");
+      if (!grid) return;
+
+      try {
+        const res = await fetch("ideas.json");
+        if (!res.ok) {
+          throw new Error("HTTP " + res.status + " when fetching ideas.json");
+        }
+        const ideas = await res.json();
+
+        ideas.forEach(idea => {
+          const card = buildIdeaCard(idea);
+          grid.appendChild(card);
+        });
+      } catch (err) {
+        console.error("Error loading ideas.json", err);
+        grid.innerHTML = "<p>Could not load project ideas.</p>";
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", loadIdeas);
+  </script>
+</body>
+</html>
