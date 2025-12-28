@@ -562,8 +562,9 @@ main {
 
 
 /* ----------------------------------------------------------
-   PUBLICATION CARDS + CAROUSEL
+   PUBLICATION CARDS + CAROUSEL (Versión Centrada en Modal)
 ----------------------------------------------------------- */
+
 .pubs-carousel {
   display: grid;
   grid-template-columns: auto 1fr auto;  /* left arrow | cards | right arrow */
@@ -586,7 +587,7 @@ main {
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  flex: 1 1 0; /* Todas las tarjetas del mismo ancho */
+  flex: 1 1 0;
 }
 
 .pub-card:hover {
@@ -596,8 +597,8 @@ main {
 
 .pub-header-img {
   width: 100%;
-  height: 200px;           
-  object-fit: cover;      
+  height: 200px;          
+  object-fit: cover;       
   object-position: top;    
   flex-shrink: 0;          
   display: block;
@@ -610,27 +611,29 @@ main {
   border: none;
   box-shadow: none;
   cursor: default;
+  align-items: center; /
 }
 
 .pub-card.expanded .pub-header-img {
-  width: 40%;              
-  height: auto;           
+  width: 40%;
   max-width: 280px;
-  object-fit: contain;     
+  height: auto;
+  align-self: center;     
+  object-fit: contain;
   border-bottom: none;
-  border-right: 1px solid #e5e7eb;
 }
 
 .pub-card.expanded .pub-body {
   padding: 1.1rem 1.2rem 1.2rem;
 }
 
+/* --- CUERPO DE LA TARJETA --- */
 .pub-body {
   padding: 0.75rem 0.85rem 0.8rem;
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
-  flex-grow: 1; /* occupy remaining space */
+  flex-grow: 1;
 }
 
 .pub-badge-row {
@@ -661,7 +664,7 @@ main {
   color: var(--text-soft);
 }
 
-/* clamp summary so cards don't get too tall in grid view */
+/* clamp summary so cards don't get too tall */
 .pub-summary {
   font-size: 0.82rem;
   line-height: 1.5;
