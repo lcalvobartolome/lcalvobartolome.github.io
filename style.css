@@ -564,7 +564,6 @@ main {
 /* ----------------------------------------------------------
    PUBLICATION CARDS + CAROUSEL
 ----------------------------------------------------------- */
-
 .pubs-carousel {
   display: grid;
   grid-template-columns: auto 1fr auto;  /* left arrow | cards | right arrow */
@@ -587,10 +586,25 @@ main {
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  flex: 1 1 0;
+  flex: 1 1 0; /* Todas las tarjetas del mismo ancho */
 }
 
-/* expanded card in modal */
+.pub-card:hover {
+  box-shadow: 0 18px 40px rgba(15,23,42,0.12);
+  transform: translateY(-1px);
+}
+
+.pub-header-img {
+  width: 100%;
+  height: 200px;           
+  object-fit: cover;      
+  object-position: top;    
+  flex-shrink: 0;          
+  display: block;
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
 .pub-card.expanded {
   flex-direction: row;
   border: none;
@@ -599,32 +613,16 @@ main {
 }
 
 .pub-card.expanded .pub-header-img {
-  width: 40%;
+  width: 40%;              
+  height: auto;           
   max-width: 280px;
-  height: auto;
-  object-fit: contain;
+  object-fit: contain;     
   border-bottom: none;
   border-right: 1px solid #e5e7eb;
-  background: #f9fafb;
 }
 
 .pub-card.expanded .pub-body {
   padding: 1.1rem 1.2rem 1.2rem;
-}
-
-.pub-card:hover {
-  box-shadow: 0 18px 40px rgba(15,23,42,0.12);
-  transform: translateY(-1px);
-}
-
-/* thumbnail – keep from becoming huge */
-.pub-header-img {
-  width: 100%;
-  height: auto;
-  max-height: 220px;          /* cap height */
-  object-fit: contain;
-  background: #f9fafb;
-  border-bottom: 1px solid #e5e7eb;
 }
 
 .pub-body {
@@ -632,6 +630,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
+  flex-grow: 1; /* occupy remaining space */
 }
 
 .pub-badge-row {
@@ -662,16 +661,22 @@ main {
   color: var(--text-soft);
 }
 
-/* clamp summary so cards don't get too tall */
+/* clamp summary so cards don't get too tall in grid view */
 .pub-summary {
   font-size: 0.82rem;
   line-height: 1.5;
   color: var(--text-main);
-
+  
   display: -webkit-box;
   -webkit-line-clamp: 8;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+/* Remove clamp in expanded view */
+.pub-card.expanded .pub-summary {
+  -webkit-line-clamp: unset;
+  overflow: visible;
 }
 
 .pub-tags {
@@ -1027,7 +1032,7 @@ footer {
 }
 
 /* ----------------------------------------------------------
-   ALIGN FILTER GROUPS (Year ⟷ Tag)
+   ALIGN FILTER GROUPS (Year- Tag)
 ----------------------------------------------------------- */
 
 /* Put both labels on the same line */
@@ -1046,7 +1051,7 @@ footer {
   height: 100%; 
 }
 
-/* TAG COLUMN — add a fake spacer so heights match YEAR column */
+/* TAG COLUMN: add a fake spacer so heights match YEAR column */
 .filter-group.tag-group::after {
   content: "";
   display: block;

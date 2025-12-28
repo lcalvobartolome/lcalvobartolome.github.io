@@ -1,9 +1,25 @@
 [
+    {
+    "id": "phdthesis",
+    "year": 2025,
+    "tags": ["tooling", "tm", "hci"],
+    "venue": "PhD Thesis",
+    "badge": "industrialization of topic models",
+    "title": "Topic Analysis Incorporating Expert Knowledge: An Application to Science Analysis",
+    "authors": [
+      "Lorena Calvo-Bartolomé"
+    ],
+    "summary": "Topic models are great at finding patterns in documents, but they are rarely used outside research because they're too complex and do not fit into real workflows. This thesis tackles the \"industrialization\" of topic models—making them actually useful for policymakers and analysts who need to make sense of massive document collections. By putting domain experts at the center of the process, we show how to transform research algorithms into production tools that people can actually use for decision-making.",
+    "thumb": "img/Nidoqueen.png",
+    "links": [
+      { "type": "paper", "href": "https://drive.google.com/file/d/1UD9au4T_FZ8P2KWg01W3o-iwFIt_v3en/view?usp=drive_link" }
+    ]
+  },
   {
     "id": "parte1",
     "year": 2025,
-    "tags": ["tooling", "eval"],
-    "venue": "Engineering Applications of Artificial Intelligence",
+    "tags": ["tooling", "hci", "tm"],
+    "venue": "Engineering Applications of AI",
     "badge": "topic models",
     "title": "Topic models for decision-support systems. Part I: Training, representation and exploitation of topic models",
     "authors": [
@@ -13,7 +29,7 @@
       "David Pérez-Fernández",
       "Jerónimo Arenas-García"
     ],
-    "summary": "This paper presents tase, a platform for expert-guided topic modeling combining Bayesian and Neural models with an innovative Solr-based exploitation framework for decision-support systems. It introduces scalable indexing, semantic similarity tools, and two real-world STI use cases.",
+    "summary": "Policymakers need to analyze massive science and technology datasets to make informed decisions, but topic models are hard to tune and their outputs do not always match what experts need. We built TASE, a platform that lets experts guide topic model training, curation and evaluation and then deploy those models at scale for semantic search and decision support. We show it works on two real-world policy scenarios.",
     "thumb": "img/nocluehowtocallyourpics.png",
     "links": [
       { "type": "paper", "href": "https://www.sciencedirect.com/science/article/pii/S0952197625014265" },
@@ -23,7 +39,7 @@
   {
     "id": "proxann",
     "year": 2025,
-    "tags": ["eval", "tooling"],
+    "tags": ["eval", "tm", "hci"],
     "venue": "ACL 2025",
     "badge": "evaluation",
     "title": "ProxAnn: Use-Oriented Evaluations of Topic Models and Document Clustering",
@@ -33,7 +49,7 @@
       "Jordan Boyd-Graber",
       "Philip Resnik"
     ],
-    "summary": "This paper proposes a scalable human evaluation protocol and automated approximation for judging topic models and clustering systems under real-world user behavior. LLM proxies achieve performance comparable to human annotators.",
+    "summary": "Topic models are tools to help people navigate large document collections. However, testing whether a topic model is good or not is notoriously hard, as it's subjective and requires asking real people about whether the outputs make sense. We show that you can ask a language model to recreate the answers of humans, correlating better with ground truth than previous evaluations.",
     "thumb": "img/proxann.png",
     "links": [
       { "type": "paper", "href": "https://aclanthology.org/2025.acl-long.772/" },
@@ -43,7 +59,7 @@
   {
     "id": "bass",
     "year": 2025,
-    "tags": ["eval", "multi", "tooling"],
+    "tags": ["eval", "tm", "hci"],
     "venue": "ACL 2025",
     "badge": "topic models",
     "title": "Large Language Models Struggle to Describe the Haystack without Human Help: A Social Science-Inspired Evaluation of Large Research Language Models",
@@ -57,7 +73,7 @@
       "Juan Francisco Fung",
       "Jordan Lee Boyd-Graber"
     ],
-    "summary": "This study evaluates how users learn from LLM-based topic models versus traditional models. LLM-generated topics are readable but often overly generic; human supervision alleviates hallucination. Traditional LDA remains effective despite being less user-friendly.",
+    "summary": "Large Language Models are increasingly used to help people understand document collections, but do they actually work better than traditional topic models? We tested how much users learn from LLM-generated topics versus traditional models and found that while LLMs produce more readable topics, they are often too generic for specialized domains. Adding human supervision helps, but traditional methods like LDA remain surprisingly effective: they just need better interfaces.",
     "thumb": "img/bass.png",
     "links": [
       { "type": "paper", "href": "https://aclanthology.org/2025.acl-long.375/" },
@@ -67,15 +83,15 @@
   {
     "id": "parte2",
     "year": 2025,
-    "tags": ["tooling", "eval"],
-    "venue": "Engineering Applications of Artificial Intelligence",
-    "badge": "hierarchical topic models",
+    "tags": ["tm", "hci"],
+    "venue": "Engineering Applications of AI",
+    "badge": "htms",
     "title": "Topic models for decision-support systems, Part II: Expert-in-the-loop hierarchical topic models",
     "authors": [
       "Lorena Calvo-Bartolomé",
       "Jerónimo Arenas-García"
     ],
-    "summary": "This work introduces WS and DS, two expert-in-the-loop hierarchical topic modeling algorithms enabling domain experts to refine topic structures. The methods simplify tuning and integrate into IntelComp’s toolkit, showing strong performance across scientific datasets.",
+    "summary": "Topic models usually give you one flat list of topics, but sometimes you want different levels of detail—like seeing both \"machine learning\" and its subtopics \"neural networks\" or \"reinforcement learning\". Existing hierarchical topic models do this but are incredibly complex to tune. We introduce HTM-WS and HTM-DS, two methods that let experts build topic hierarchies interactively with minimal tuning, working with any topic model type, and we show they perform well on scientific datasets.",
     "thumb": "img/representation_WS_DS_new_left.png",
     "links": [
       { "type": "paper", "href": "https://www.sciencedirect.com/science/article/pii/S0952197625015106" },
@@ -85,7 +101,7 @@
   {
     "id": "case",
     "year": 2025,
-    "tags": ["tooling"],
+    "tags": ["tooling", "tm", "hci"],
     "venue": "COLING 2025",
     "badge": "decision support",
     "title": "CASE: Large Scale Topic Exploitation for Decision Support Systems",
@@ -94,7 +110,7 @@
       "Jerónimo Arenas-García",
       "David Pérez-Fernández"
     ],
-    "summary": "CASE introduces a Solr-based architecture for exploiting topic models at scale, enabling semantic search, topic inference, and STI indicator generation. Demonstrated through two real-world policy-support scenarios.",
+    "summary": "Topic models can help analyze large document collections, but they're rarely integrated into actual decision-making systems because it's hard to search and compute with them efficiently. CASE solves this by building on Solr search technology to enable fast semantic search and topic-based analysis at scale. We show how it works through two real applications: calculating science policy indicators and helping evaluate research project proposals.",
     "thumb": "img/case_architecture.png",
     "links": [
       { "type": "paper", "href": "https://aclanthology.org/2025.coling-demos.15.pdf" },
@@ -104,7 +120,7 @@
   {
     "id": "mind",
     "year": 2025,
-    "tags": ["multi", "eval"],
+    "tags": ["multi", "tm", "hci"],
     "venue": "EMNLP 2025",
     "badge": "multilingual QA",
     "title": "Discrepancy Detection at the Data Level: Toward Consistent Multilingual Question Answering",
@@ -116,7 +132,7 @@
       "Jerónimo Arenas-García",
       "Jordan Lee Boyd-Graber"
     ],
-    "summary": "MIND introduces a user-in-the-loop fact-checking pipeline for detecting factual and cultural inconsistencies in multilingual QA systems. Evaluated across datasets and domains, it identifies culturally-dependent divergences in QA responses.",
+    "summary": "Multilingual question answering systems should give consistent answers across languages, but they need to distinguish between objective facts (like \"What is jaundice?\") and culturally-dependent questions (like \"Who assists in childbirth?\"). We introduce MIND, a user-in-the-loop pipeline that detects both factual errors and cultural discrepancies in multilingual QA systems, helping build systems that are both accurate and culturally aware.",
     "thumb": "img/mind.png",
     "links": [
       { "type": "paper", "href": "https://arxiv.org/pdf/2510.11928" },
@@ -127,16 +143,16 @@
   {
     "id": "itmt",
     "year": 2023,
-    "tags": ["tooling"],
+    "tags": ["tooling", "tm", "hci"],
     "venue": "EACL 2023",
-    "badge": "demo",
+    "badge": "topic models",
     "title": "ITMT: Interactive Topic Model Trainer",
     "authors": [
       "Lorena Calvo-Bartolomé",
       "Jose Antonio Espinosa Melchor",
       "Jerónimo Arenas-García"
     ],
-    "summary": "ITMT is a GUI-driven tool enabling domain experts to train and refine topic models interactively, integrating classical and neural topic modeling libraries. The tool simplifies optimization and comparison across models.",
+    "summary": "Topic models are powerful but hard to use if you're not an NLP expert—you need to know how to tune parameters and compare different algorithms. We built ITMT, a graphical tool that lets domain experts train and refine topic models interactively without needing deep technical knowledge. It supports both classical and modern neural methods, making the whole process accessible to the people who actually understand the content.",
     "thumb": "img/tmting.png",
     "links": [
       { "type": "paper", "href": "https://aclanthology.org/2023.eacl-demo.6/" },
