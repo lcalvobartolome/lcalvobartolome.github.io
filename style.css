@@ -558,10 +558,10 @@ main {
   font-size: 0.68rem;
   padding: 0.1rem 0.45rem;
   border-radius: var(--radius-pill);
-  background: #ede9e3;
-  border: 1px solid #d8d3cb;
-  color: var(--text-2);
-  font-weight: 400;
+  background: var(--blue-xlt);
+  border: 1px solid var(--blue-lt);
+  color: var(--blue-mid);
+  font-weight: 500;
 }
 
 .pub-links-row {
@@ -601,7 +601,13 @@ main {
   font-size: 0.9rem;
 }
 
-/* Pagination controls */
+.pub-card:hover .pub-tag,
+.pub-card:hover .pub-badge,
+.course-card:hover .course-terms,
+.idea-card:hover .idea-tags span {
+  background: var(--blue-lt);
+  border-color: #93c5fd;
+}
 .pubs-pagination {
   display: flex;
   align-items: center;
@@ -689,10 +695,15 @@ main {
 .course-terms {
   font-size: 0.75rem;
   font-weight: 500;
-  color: var(--blue-mid);
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
+  padding: 0.1rem 0.5rem;
+  border-radius: var(--radius-pill);
+  background: var(--blue-xlt);
+  border: 1px solid var(--blue-lt);
+  color: var(--blue-mid);
+  align-self: flex-start;
 }
 
 .course-link {
@@ -947,9 +958,10 @@ main {
   font-size: 0.7rem;
   padding: 0.12rem 0.5rem;
   border-radius: var(--radius-pill);
-  background: #ede9e3;
-  border: 1px solid #d8d3cb;
-  color: var(--text-2);
+  background: var(--blue-xlt);
+  border: 1px solid var(--blue-lt);
+  color: var(--blue-mid);
+  font-weight: 500;
 }
 
 /* ─────────────────────────────────────────────
