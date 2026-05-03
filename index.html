@@ -3,236 +3,185 @@
   <head>
     <meta charset="UTF-8" />
     <title>Lorena Calvo-Bartolomé</title>
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Academic homepage of Lorena Calvo-Bartolomé -  Ph.D. in Signal Processing and Communications Engineering | Natural Language Processing Researcher @ Universidad Carlos III de Madrid."
-    />
-
-    <!-- favicon as inline SVG -->
-    <link
-      rel="icon"
-      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22></text></svg>"
-    />
-
+    <meta name="description" content="Academic homepage of Lorena Calvo-Bartolomé — Ph.D. in Signal Processing and Communications Engineering | NLP Researcher @ Universidad Carlos III de Madrid." />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>🔵</text></svg>" />
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
     <div class="page" id="top">
-      <!-- NAV -->
-      <header>
+
+      <!-- ── NAV ── -->
+      <header id="siteHeader">
         <div class="logo-wordmark">
-          <div class="logo-circle" aria-hidden="true"></div>
-          <div>
-            <div class="logo-text-main">Lorena Calvo-Bartolomé</div>
-          </div>
+          <div class="logo-bar" aria-hidden="true"></div>
+          <span class="logo-text-main">Lorena Calvo-Bartolomé</span>
         </div>
-        <nav>
+        <nav aria-label="Main navigation">
           <ul>
-            <li><a href="#research">Research / Publications</a></li>
-            <li><a href="#teaching">Teaching</a></li>
-            <li><a href="#students">Students / About</a></li>
+            <li><a href="#research" data-nav="research">Research</a></li>
+            <li><a href="#teaching" data-nav="teaching">Teaching</a></li>
+            <li><a href="#students" data-nav="students">Students</a></li>
           </ul>
         </nav>
       </header>
 
       <main>
-        <!-- HERO -->
-        <section class="section hero-combined">
+
+        <!-- ── HERO ── -->
+        <section class="hero-section" id="hero">
           <div class="hero-text">
-            <!-- <div class="hero-intro-line">
-              <span class="hero-intro-dot"></span>
-              <span>Building language technologies that serve people</span>
-            </div>-->
+            <div class="hero-eyebrow">
+              <span class="hero-eyebrow-dot"></span>
+              NLP Researcher · UC3M
+            </div>
 
             <h1 class="hero-title">
               I design NLP-based tools that help us understand
-              <span id="hero-word" class="hero-tagline-word"
-                >large document collections</span
-              >.
+              <span id="heroWord" class="hero-tagline-word">large document collections</span>.
             </h1>
 
-            <p class="hero-tagline">
-              I am currently an NLP researcher with teaching duties at Universidad Carlos III de Madrid. I received my PhD in Signal Processing and Communications Engineering (specialisation in Signal and Data Processing) in November 2025, under the supervision of Jerónimo Arenas-García.
-              <br /><br/>
-              So far, my work has focused on the development of NLP methods for real-world needs. A central theme of my research has been the design of practical systems that industrialise the use of topic models, particularly in applied settings within the Science, Technology, and Innovation (STI) domain, where analysts need to make sense of large document collections to support informed decision-making.
-              <br /><br />
-              I'm now looking to transition from supporting technical decision-making (such as public procurement) to high-risk social decision-making, particularly in sensitive domains like public health and crisis intervention.
-
-              One direction I am aiming to explore is the design of NLP-based tools that help practitioners identify which social and emotional factors drive risk in young people, and where timely interventions could prevent crises rather than merely react to them.
-            </p>
+            <div class="hero-bio">
+              <p>I am currently an NLP researcher with teaching duties at Universidad Carlos III de Madrid. I received my PhD in Signal Processing and Communications Engineering in November 2025, under the supervision of Jerónimo Arenas-García.</p>
+              <p>My work has focused on the development of NLP methods for real-world needs — particularly the design of practical systems that industrialise the use of topic models in applied settings within the Science, Technology, and Innovation (STI) domain, where analysts need to make sense of large document collections to support informed decision-making.</p>
+              <p>I'm now looking to transition toward high-risk social decision-making, particularly in sensitive domains like public health and crisis intervention.</p>
+            </div>
 
             <div class="hero-links">
-              <a href="mailto:lcalvo@pa.uc3m.es">
-                lcalvo@pa.uc3m.es <span>· email</span>
+              <a class="hero-link" href="/cdn-cgi/l/email-protection#6c000f0d001a032c1c0d42190f5f0142091f">
+                <span class="__cf_email__" data-cfemail="1b77787a776d745b6b7a356e782876357e68">[email&#160;protected]</span> <span class="link-type">· email</span>
               </a>
-              <a href="https://drive.google.com/file/d/1kEdb9NDCK2ik7OSYC50FK64Gg6JccpK4/view?usp=drive_link" target="_blank" rel="noopener">
-                CV <span>· pdf</span>
+              <a class="hero-link" href="https://drive.google.com/file/d/1kEdb9NDCK2ik7OSYC50FK64Gg6JccpK4/view?usp=drive_link" target="_blank" rel="noopener">
+                CV <span class="link-type">· pdf</span>
               </a>
-              <a
-                href="https://scholar.google.com/citations?user=qtRz6ksAAAAJ&hl=en"
-                target="_blank"
-                rel="noopener"
-              >
-                Scholar <span>· papers</span>
+              <a class="hero-link" href="https://scholar.google.com/citations?user=qtRz6ksAAAAJ&hl=en" target="_blank" rel="noopener">
+                Scholar <span class="link-type">· papers</span>
               </a>
-              <a
-                href="https://github.com/lcalvobartolome"
-                target="_blank"
-                rel="noopener"
-              >
-                GitHub <span>· code</span>
+              <a class="hero-link" href="https://github.com/lcalvobartolome" target="_blank" rel="noopener">
+                GitHub <span class="link-type">· code</span>
               </a>
             </div>
           </div>
 
           <aside class="hero-profile" aria-label="Profile photo">
-            <div class="hero-photo">
+            <div class="hero-photo-wrap">
               <img src="img/IMG_4642.jpeg" alt="Lorena Calvo-Bartolomé" />
             </div>
           </aside>
         </section>
 
-        <!-- RESEARCH + PUBLICATIONS -->
-        <section class="section" id="research">
-          <div class="research-header">
-            <div class="section-heading">
-              <div class="section-icon" aria-hidden="true"></div>
-              <h2>Research & selected publications</h2>
+        <!-- ── RESEARCH & PUBLICATIONS ── -->
+        <section class="section section-tinted" id="research" data-screen-label="Research">
+          <div class="section-heading">
+            <div class="section-label">
+              <span class="section-label-dot"></span>Research &amp; Publications
             </div>
+            <h2>Selected publications</h2>
+          </div>
 
+          <div class="research-intro">
             <p class="section-subtitle">
               Methodologically, my research sits at the intersection of NLP and human-computer interaction, with a focus on the design of task-oriented evaluation protocols, interactive systems for large-scale text exploration, and interfaces that enable domain experts to guide model behaviour.
             </p>
 
             <!-- Filters -->
-            <div class="filter-bar">
+            <div class="filter-bar" aria-label="Filter publications">
               <div class="filter-group">
-                <label for="yearMin">Filter by year</label>
+                <div style="display:flex;justify-content:space-between;align-items:center;">
+                  <span class="filter-label">Year range</span>
+                  <span id="yearLabel">2023–2025</span>
+                </div>
                 <div class="filter-range">
                   <div class="range-track"></div>
                   <div class="range-highlight" id="rangeHighlight"></div>
-                  <input
-                    type="range"
-                    id="yearMin"
-                    min="2020"
-                    max="2025"
-                    value="2023"
-                  />
-                  <input
-                    type="range"
-                    id="yearMax"
-                    min="2020"
-                    max="2025"
-                    value="2025"
-                  />
+                  <input type="range" id="yearMin" min="2020" max="2025" value="2023" style="z-index:2;" />
+                  <input type="range" id="yearMax" min="2020" max="2025" value="2025" style="z-index:3;" />
                 </div>
-                <span id="yearLabel">2023-2025</span>
               </div>
-
               <div class="filter-group">
-                <label for="tagFilter">or tag</label>
+                <span class="filter-label">Topic</span>
                 <select id="tagFilter">
-                  <option value="all">all</option>
-                  <option value="multi">multilingual</option>
-                  <option value="eval">evaluation</option>
-                  <option value="tooling">tools</option>
-                  <option value="tm">topic models</option>
+                  <option value="all">All topics</option>
+                  <option value="multi">Multilingual</option>
+                  <option value="eval">Evaluation</option>
+                  <option value="tooling">Tools</option>
+                  <option value="tm">Topic models</option>
                   <option value="hci">HCI / users</option>
                 </select>
               </div>
             </div>
           </div>
 
-          <!-- Pubs carousel -->
-          <div class="pubs-carousel">
-            <button
-              class="carousel-arrow carousel-arrow-left"
-              type="button"
-              aria-label="Previous publications"
-            >
-              ‹
-            </button>
+          <!-- Publications grid (filled by JS) -->
+          <div class="pubs-grid" id="pubsGrid" aria-label="Publications"></div>
 
-            <section
-              class="pubs-grid"
-              id="pubsGrid"
-              aria-label="Selected publications"
-            ></section>
-
-            <button
-              class="carousel-arrow carousel-arrow-right"
-              type="button"
-              aria-label="Next publications"
-            >
-              ›
-            </button>
+          <!-- Pagination -->
+          <div class="pubs-pagination" id="pubsPagination" aria-label="Publication pages">
+            <button class="pubs-page-btn" id="pubsPrev" type="button" aria-label="Previous">&#8249;</button>
+            <span class="pubs-page-counter" id="pubsCounter"></span>
+            <button class="pubs-page-btn" id="pubsNext" type="button" aria-label="Next">&#8250;</button>
           </div>
         </section>
 
-        <!-- TEACHING -->
-        <section class="section card-section" id="teaching">
+        <!-- ── TEACHING ── -->
+        <section class="section" id="teaching" data-screen-label="Teaching">
           <div class="section-heading">
-            <div class="section-icon" aria-hidden="true"></div>
-            <h2>Teaching</h2>
+            <div class="section-label">
+              <span class="section-label-dot"></span>Teaching
+            </div>
+            <h2>Courses</h2>
           </div>
-
           <p class="section-subtitle" id="teachingIntro"></p>
-          <div class="course-list" id="courseList"></div>
+          <div class="course-grid" id="courseGrid"></div>
         </section>
 
-        <!-- STUDENTS / ABOUT -->
-        <section class="section card-section" id="students">
+        <!-- ── STUDENTS ── -->
+        <section class="section section-tinted" id="students" data-screen-label="Students">
           <div class="section-heading">
-            <div class="section-icon" aria-hidden="true"></div>
-            <h2>For students & collaborators</h2>
+            <div class="section-label">
+              <span class="section-label-dot"></span>Students &amp; Collaborators
+            </div>
+            <h2>For students &amp; collaborators</h2>
           </div>
 
-          <p class="section-subtitle" id="studentsIntro"></p>
-          <p class="section-subtitle" id="studentsFocus"></p>
-          <div class="student-lines" id="studentLines"></div>
+          <div class="students-layout">
+            <div class="students-copy">
+              <p id="studentsIntro"></p>
+              <p id="studentsFocus"></p>
+              <a class="ideas-cta" id="ideasCta" href="projects.html">
+                Current project ideas &amp; past projects →
+              </a>
+            </div>
 
-          <a class="ideas-button" id="ideasButton" href="projects.html">
-            Current project ideas & Past projects →
-          </a>
+            <div class="research-lines" id="researchLines" aria-label="Research lines"></div>
+          </div>
         </section>
+
       </main>
 
       <footer>
-        Last updated: <span id="lastUpdated"></span> · Built for GitHub Pages.
+        <span>Last updated: <span id="lastUpdated">—</span></span>
+        <span>Built for GitHub Pages · <a href="#top">Back to top ↑</a></span>
       </footer>
     </div>
 
-    <!-- PUBLICATION MODAL -->
-    <div class="pub-modal" id="pubModal" aria-hidden="true">
+    <!-- ── PUBLICATION MODAL ── -->
+    <div class="pub-modal" id="pubModal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Publication detail">
       <div class="pub-modal-card">
         <div class="pub-modal-inner">
-          <button class="modal-close" type="button" aria-label="Close">
-            ×
-          </button>
+          <button class="modal-close" type="button" aria-label="Close">×</button>
           <div id="pubModalContent"></div>
         </div>
       </div>
     </div>
 
-    <!-- SCRIPT -->
-    <script>
-      const PAGE_SIZE = 3;
-      let allCards = [];
-      let filteredCards = [];
-      let currentStartIndex = 0;
-      let leftArrow = null;
-      let rightArrow = null;
-
-      function isMobileView() {
-        return window.matchMedia("(max-width: 640px)").matches;
-      }
-
-      /* Rotating hero word */
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+      /* ──────────────────────────────────────────────
+         ROTATING HERO WORD
+      ─────────────────────────────────────────────── */
       function initRotatingWord() {
-        const el = document.getElementById("hero-word");
+        const el = document.getElementById("heroWord");
         if (!el) return;
         const words = [
           "large document collections",
@@ -253,52 +202,114 @@
             el.textContent = words[idx];
             el.style.opacity = "1";
             el.style.transform = "translateY(0)";
-          }, 150);
-        }, 2200);
+          }, 160);
+        }, 2400);
+        el.style.transition = "opacity 160ms ease, transform 160ms ease";
       }
 
-      /* Build one publication card from JSON */
+      /* ──────────────────────────────────────────────
+         SCROLL-SPY NAV
+      ─────────────────────────────────────────────── */
+      function initScrollSpy() {
+        const sections = ["research", "teaching", "students"];
+        const links = {};
+        sections.forEach((id) => {
+          const el = document.querySelector(`[data-nav="${id}"]`);
+          if (el) links[id] = el;
+        });
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              const id = entry.target.id;
+              if (links[id]) {
+                if (entry.isIntersecting) links[id].classList.add("active");
+                else links[id].classList.remove("active");
+              }
+            });
+          },
+          { rootMargin: "-30% 0px -60% 0px" }
+        );
+
+        sections.forEach((id) => {
+          const el = document.getElementById(id);
+          if (el) observer.observe(el);
+        });
+      }
+
+      /* ──────────────────────────────────────────────
+         SMOOTH SCROLL
+      ─────────────────────────────────────────────── */
+      function initSmoothScroll() {
+        const header = document.getElementById("siteHeader");
+        document.querySelectorAll('a[href^="#"]').forEach((link) => {
+          link.addEventListener("click", (e) => {
+            const id = link.getAttribute("href").slice(1);
+            const target = document.getElementById(id);
+            if (!target) return;
+            e.preventDefault();
+            const offset = header ? header.offsetHeight + 16 : 16;
+            const top = target.getBoundingClientRect().top + window.scrollY - offset;
+            window.scrollTo({ top, behavior: "smooth" });
+          });
+        });
+      }
+
+      /* ──────────────────────────────────────────────
+         BUILD PUB CARD
+      ─────────────────────────────────────────────── */
+      const TAG_LABELS = {
+        multi: "multilingual",
+        eval: "evaluation",
+        hci: "HCI / users",
+        tooling: "tools",
+        tm: "topic models",
+      };
+
       function buildPubCard(pub) {
         const article = document.createElement("article");
         article.className = "pub-card";
-        article.id = pub.id;
         article.dataset.year = pub.year;
         article.dataset.tags = (pub.tags || []).join(",");
 
         const img = document.createElement("img");
-        img.className = "pub-header-img";
+        img.className = "pub-thumb";
         img.src = pub.thumb;
         img.alt = pub.title + " thumbnail";
+        img.loading = "lazy";
         article.appendChild(img);
 
         const body = document.createElement("div");
         body.className = "pub-body";
 
-        const badgeRow = document.createElement("div");
-        badgeRow.className = "pub-badge-row";
-
-        const venueSpan = document.createElement("span");
-        venueSpan.textContent = pub.venue;
-        badgeRow.appendChild(venueSpan);
-
+        // meta row
+        const metaRow = document.createElement("div");
+        metaRow.className = "pub-meta-row";
+        const venue = document.createElement("span");
+        venue.className = "pub-venue";
+        venue.textContent = pub.venue;
+        metaRow.appendChild(venue);
         if (pub.badge) {
           const badge = document.createElement("span");
           badge.className = "pub-badge";
           badge.textContent = pub.badge;
-          badgeRow.appendChild(badge);
+          metaRow.appendChild(badge);
         }
-        body.appendChild(badgeRow);
+        body.appendChild(metaRow);
 
+        // title
         const h3 = document.createElement("h3");
         h3.className = "pub-title";
         h3.textContent = pub.title;
         body.appendChild(h3);
 
+        // authors
         const authors = document.createElement("div");
         authors.className = "pub-authors";
         authors.textContent = (pub.authors || []).join(", ");
         body.appendChild(authors);
 
+        // summary
         if (pub.summary) {
           const summary = document.createElement("div");
           summary.className = "pub-summary";
@@ -306,60 +317,33 @@
           body.appendChild(summary);
         }
 
+        // tags
         if (pub.tags && pub.tags.length) {
           const tagsWrap = document.createElement("div");
           tagsWrap.className = "pub-tags";
-          const labelMap = {
-            multi: "multilingual",
-            eval: "evaluation",
-            hci: "HCI / users",
-            tooling: "tools",
-            tm: "topic models",
-          };
           pub.tags.forEach((tag) => {
             const pill = document.createElement("span");
-            pill.className = "pub-tag-pill";
-            pill.textContent = labelMap[tag] || tag;
+            pill.className = "pub-tag";
+            pill.textContent = TAG_LABELS[tag] || tag;
             tagsWrap.appendChild(pill);
           });
           body.appendChild(tagsWrap);
         }
 
+        // links
         if (pub.links && pub.links.length) {
           const linksRow = document.createElement("div");
           linksRow.className = "pub-links-row";
-
           pub.links.forEach((link) => {
-            if (["paper", "github", "hf"].includes(link.type)) {
-              const a = document.createElement("a");
-              a.className = "pub-link-icon";
-              a.href = link.href;
-              a.target = "_blank";
-              a.rel = "noopener";
-
-              const span = document.createElement("span");
-              if (link.type === "paper") {
-                span.textContent = "[paper]";
-                a.setAttribute("aria-label", "Paper");
-              } else if (link.type === "github") {
-                span.textContent = "[code]";
-                a.setAttribute("aria-label", "GitHub repository");
-              } else if (link.type === "hf") {
-                span.textContent = "[HuggingFace]";
-                a.setAttribute("aria-label", "Hugging Face model");
-              }
-              a.appendChild(span);
-              linksRow.appendChild(a);
-            } else {
-              const a = document.createElement("a");
-              a.href = link.href;
-              a.target = "_blank";
-              a.rel = "noopener";
-              a.textContent = link.href;
-              linksRow.appendChild(a);
-            }
+            const a = document.createElement("a");
+            a.className = "pub-link-btn";
+            a.href = link.href;
+            a.target = "_blank";
+            a.rel = "noopener";
+            const labels = { paper: "Paper ↗", github: "Code ↗", hf: "HuggingFace ↗" };
+            a.textContent = labels[link.type] || link.href;
+            linksRow.appendChild(a);
           });
-
           body.appendChild(linksRow);
         }
 
@@ -367,225 +351,164 @@
         return article;
       }
 
-      /* Carousel arrows */
-      function initCarouselArrows() {
-        leftArrow = document.querySelector(".carousel-arrow-left");
-        rightArrow = document.querySelector(".carousel-arrow-right");
-        if (!leftArrow || !rightArrow) return;
+      /* ──────────────────────────────────────────────
+         PUBLICATIONS — LOAD & FILTER
+      ─────────────────────────────────────────────── */
+      const PAGE_SIZE = 3;
+      let allPubCards = [];
+      let filteredPubCards = [];
+      let currentPage = 0;
 
-        leftArrow.addEventListener("click", () => moveCarousel(-1));
-        rightArrow.addEventListener("click", () => moveCarousel(1));
+      function renderPage() {
+        const grid = document.getElementById("pubsGrid");
+        const counter = document.getElementById("pubsCounter");
+        const prevBtn = document.getElementById("pubsPrev");
+        const nextBtn = document.getElementById("pubsNext");
+        if (!grid) return;
 
-        updateCarouselArrows();
-      }
+        const total = filteredPubCards.length;
+        const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+        currentPage = Math.min(currentPage, totalPages - 1);
 
-      function moveCarousel(step) {
-        if (!filteredCards.length) return;
-        const maxStart = Math.max(filteredCards.length - PAGE_SIZE, 0);
-        currentStartIndex = Math.min(
-          Math.max(currentStartIndex + step, 0),
-          maxStart
-        );
-        updateCarousel();
-      }
+        // hide all, show page slice
+        allPubCards.forEach((c) => (c.style.display = "none"));
+        const start = currentPage * PAGE_SIZE;
+        filteredPubCards.slice(start, start + PAGE_SIZE).forEach((c) => (c.style.display = ""));
 
-      function updateCarouselArrows() {
-        if (!leftArrow || !rightArrow) return;
-
-        // On mobile we hide arrows via CSS; just disable them in JS too
-        if (isMobileView()) {
-          leftArrow.disabled = true;
-          rightArrow.disabled = true;
-          return;
+        // empty state
+        let empty = grid.querySelector(".pubs-empty");
+        if (total === 0) {
+          if (!empty) {
+            empty = document.createElement("p");
+            empty.className = "pubs-empty";
+            empty.textContent = "No publications match the current filters.";
+            grid.appendChild(empty);
+          }
+        } else {
+          if (empty) empty.remove();
         }
 
-        if (!filteredCards.length || filteredCards.length <= PAGE_SIZE) {
-          leftArrow.disabled = true;
-          rightArrow.disabled = true;
-          return;
-        }
+        // pagination controls
+        const pagination = document.getElementById("pubsPagination");
+        if (pagination) pagination.style.display = total <= PAGE_SIZE ? "none" : "";
 
-        leftArrow.disabled = currentStartIndex === 0;
-        rightArrow.disabled =
-          currentStartIndex + PAGE_SIZE >= filteredCards.length;
+        if (counter) counter.textContent = total > 0 ? (currentPage + 1) + " / " + totalPages : "";
+        if (prevBtn) prevBtn.disabled = currentPage === 0;
+        if (nextBtn) nextBtn.disabled = currentPage >= totalPages - 1;
       }
 
-      function updateCarousel() {
-        // hide everything first
-        allCards.forEach((card) => {
-          card.style.display = "none";
+      function applyPubFilters() {
+        const yearMin = parseInt(document.getElementById("yearMin").value, 10);
+        const yearMax = parseInt(document.getElementById("yearMax").value, 10);
+        const tag = document.getElementById("tagFilter").value;
+
+        filteredPubCards = allPubCards.filter((card) => {
+          const year = parseInt(card.dataset.year, 10);
+          const tags = (card.dataset.tags || "").split(",").map((t) => t.trim()).filter(Boolean);
+          return year >= yearMin && year <= yearMax && (tag === "all" || tags.includes(tag));
         });
 
-        if (!filteredCards.length) {
-          updateCarouselArrows();
-          return;
-        }
-
-        if (isMobileView()) {
-          // On phone: show ALL filtered cards as a vertical list
-          filteredCards.forEach((card) => {
-            card.style.display = "";
-          });
-          currentStartIndex = 0; // reset for when user rotates/resizes
-        } else {
-          // Desktop / tablet: keep paging behaviour
-          const visibleSlice = filteredCards.slice(
-            currentStartIndex,
-            currentStartIndex + PAGE_SIZE
-          );
-          visibleSlice.forEach((card) => {
-            card.style.display = "";
-          });
-        }
-
-        updateCarouselArrows();
+        currentPage = 0;
+        renderPage();
       }
 
-      /* Filters */
+      function updateRangeHighlight() {
+        const yearMin = document.getElementById("yearMin");
+        const yearMax = document.getElementById("yearMax");
+        const highlight = document.getElementById("rangeHighlight");
+        const label = document.getElementById("yearLabel");
+        if (!yearMin || !yearMax || !highlight || !label) return;
+
+        const min = parseInt(yearMin.value, 10);
+        const max = parseInt(yearMax.value, 10);
+        const absMin = parseInt(yearMin.min, 10);
+        const absMax = parseInt(yearMax.max, 10);
+        const span = absMax - absMin;
+
+        const leftPct = ((min - absMin) / span) * 100;
+        const rightPct = ((max - absMin) / span) * 100;
+        highlight.style.left = leftPct + "%";
+        highlight.style.width = Math.max(rightPct - leftPct, 0) + "%";
+        label.textContent = min + "–" + max;
+      }
+
       function initFilters() {
         const yearMin = document.getElementById("yearMin");
         const yearMax = document.getElementById("yearMax");
-        const yearLabel = document.getElementById("yearLabel");
-        const highlight = document.getElementById("rangeHighlight");
         const tagFilter = document.getElementById("tagFilter");
-
-        if (
-          !yearMin ||
-          !yearMax ||
-          !yearLabel ||
-          !highlight ||
-          !tagFilter ||
-          !allCards.length
-        )
-          return;
-
-        const minYear = parseInt(yearMin.min, 10);
-        const maxYear = parseInt(yearMax.max, 10);
-        const span = maxYear - minYear;
-
-        function updateHighlight() {
-          const min = parseInt(yearMin.value, 10);
-          const max = parseInt(yearMax.value, 10);
-          const leftPercent = ((min - minYear) / span) * 100;
-          const rightPercent = ((max - minYear) / span) * 100;
-          highlight.style.left = leftPercent + "%";
-          highlight.style.width = Math.max(rightPercent - leftPercent, 0) + "%";
-        }
-
-        function normalizeYears() {
-          let min = parseInt(yearMin.value, 10);
-          let max = parseInt(yearMax.value, 10);
-          if (min > max) {
-            max = min;
-            yearMax.value = String(max);
-          }
-          yearLabel.textContent = min + "-" + max;
-          updateHighlight();
-        }
-
-        // Make sure the min thumb is still reachable when close to max
-        function updateZIndex() {
-          const min = parseInt(yearMin.value, 10);
-          const max = parseInt(yearMax.value, 10);
-          if (min >= max) {
-            yearMin.style.zIndex = "3";
-            yearMax.style.zIndex = "2";
-          } else {
-            yearMin.style.zIndex = "2";
-            yearMax.style.zIndex = "3";
-          }
-        }
-
-        function applyFilters() {
-          const min = parseInt(yearMin.value, 10);
-          const max = parseInt(yearMax.value, 10);
-          const tag = tagFilter.value;
-
-          filteredCards = allCards.filter((card) => {
-            const year = parseInt(card.dataset.year, 10);
-            const tags = (card.dataset.tags || "")
-              .split(",")
-              .map((t) => t.trim())
-              .filter(Boolean);
-
-            const yearOK = year >= min && year <= max;
-            const tagOK = tag === "all" || tags.includes(tag);
-            return yearOK && tagOK;
-          });
-
-          currentStartIndex = 0;
-          updateCarousel();
-        }
+        const prevBtn = document.getElementById("pubsPrev");
+        const nextBtn = document.getElementById("pubsNext");
+        if (!yearMin || !yearMax || !tagFilter) return;
 
         function onChange() {
-          normalizeYears();
-          updateZIndex();
-          applyFilters();
+          let mn = parseInt(yearMin.value, 10);
+          let mx = parseInt(yearMax.value, 10);
+          if (mn > mx) { mx = mn; yearMax.value = String(mx); }
+          updateRangeHighlight();
+          applyPubFilters();
         }
 
         yearMin.addEventListener("input", onChange);
         yearMax.addEventListener("input", onChange);
-        tagFilter.addEventListener("change", applyFilters);
+        tagFilter.addEventListener("change", applyPubFilters);
 
-        normalizeYears();
-        updateZIndex();
-        applyFilters();
+        if (prevBtn) prevBtn.addEventListener("click", () => { currentPage--; renderPage(); });
+        if (nextBtn) nextBtn.addEventListener("click", () => { currentPage++; renderPage(); });
+
+        updateRangeHighlight();
+        applyPubFilters();
       }
 
-      /* Smooth scrolling for nav */
-      function initSmoothScroll() {
-        const header = document.querySelector("header");
-        const links = document.querySelectorAll('nav a[href^="#"]');
-        if (!header || !links.length) return;
-
-        function scrollToId(id) {
-          const target = document.getElementById(id);
-          if (!target) return;
-          const headerHeight = header.offsetHeight;
-          const rect = target.getBoundingClientRect();
-          const offset = window.pageYOffset + rect.top - headerHeight - 16;
-          window.scrollTo({ top: offset, behavior: "smooth" });
-        }
-
-        links.forEach((link) => {
-          link.addEventListener("click", (e) => {
-            const href = link.getAttribute("href");
-            if (!href || !href.startsWith("#")) return;
-            const id = href.slice(1);
-            const target = document.getElementById(id);
-            if (!target) return;
-            e.preventDefault();
-            scrollToId(id);
+      async function loadPublications() {
+        const grid = document.getElementById("pubsGrid");
+        if (!grid) return;
+        try {
+          const res = await fetch("publications.json");
+          if (!res.ok) throw new Error("HTTP " + res.status);
+          const pubs = await res.json();
+          pubs.sort((a, b) => b.year - a.year).forEach((pub) => {
+            const card = buildPubCard(pub);
+            card.style.display = "none"; // hidden until renderPage
+            grid.appendChild(card);
+            allPubCards.push(card);
           });
-        });
+          filteredPubCards = [...allPubCards];
+          initFilters();   // sets filters then calls applyPubFilters → renderPage
+          initPubModal();
+        } catch (err) {
+          console.error("loadPublications:", err);
+          grid.innerHTML = '<p class="pubs-empty">Could not load publications.</p>';
+        }
       }
 
-      /* Modal for expanded publication */
+      /* ──────────────────────────────────────────────
+         PUBLICATION MODAL
+      ─────────────────────────────────────────────── */
       function initPubModal() {
-        const cards = Array.from(document.querySelectorAll(".pub-card"));
         const modal = document.getElementById("pubModal");
-        const modalContent = document.getElementById("pubModalContent");
-        if (!modal || !modalContent) return;
-        const closeBtn = modal.querySelector(".modal-close");
-        if (!closeBtn) return;
+        const content = document.getElementById("pubModalContent");
+        const closeBtn = modal && modal.querySelector(".modal-close");
+        if (!modal || !content || !closeBtn) return;
 
         function openModal(card) {
           const clone = card.cloneNode(true);
           clone.classList.add("expanded");
           clone.style.cursor = "default";
-          modalContent.innerHTML = "";
-          modalContent.appendChild(clone);
+          content.innerHTML = "";
+          content.appendChild(clone);
           modal.classList.add("open");
           modal.setAttribute("aria-hidden", "false");
+          document.body.style.overflow = "hidden";
         }
 
         function closeModal() {
           modal.classList.remove("open");
           modal.setAttribute("aria-hidden", "true");
-          modalContent.innerHTML = "";
+          content.innerHTML = "";
+          document.body.style.overflow = "";
         }
 
-        cards.forEach((card) => {
+        allPubCards.forEach((card) => {
           card.addEventListener("click", (e) => {
             if (e.target.closest("a")) return;
             openModal(card);
@@ -593,79 +516,44 @@
         });
 
         closeBtn.addEventListener("click", closeModal);
-        modal.addEventListener("click", (e) => {
-          if (e.target === modal) closeModal();
-        });
-
+        modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
         document.addEventListener("keydown", (e) => {
-          if (e.key === "Escape" && modal.classList.contains("open")) {
-            closeModal();
-          }
+          if (e.key === "Escape" && modal.classList.contains("open")) closeModal();
         });
       }
 
-      /* Load publications from JSON */
-      async function loadPublications() {
-        const grid = document.getElementById("pubsGrid");
-        if (!grid) return;
-
-        try {
-          const res = await fetch("publications.json");
-          if (!res.ok) {
-            throw new Error(
-              "HTTP " + res.status + " when fetching publications.json"
-            );
-          }
-          const pubs = await res.json();
-
-          pubs
-            .sort((a, b) => b.year - a.year)
-            .forEach((pub) => {
-              const card = buildPubCard(pub);
-              grid.appendChild(card);
-              allCards.push(card);
-            });
-
-          initCarouselArrows();
-          initFilters();
-          initPubModal();
-        } catch (err) {
-          console.error("Error loading publications.json", err);
-          grid.innerHTML = "<p>Could not load publications.</p>";
-        }
-      }
-
-      /* Teaching JSON */
+      /* ──────────────────────────────────────────────
+         TEACHING
+      ─────────────────────────────────────────────── */
       async function loadTeaching() {
         const introEl = document.getElementById("teachingIntro");
-        const listEl = document.getElementById("courseList");
-        if (!introEl || !listEl) return;
-
+        const grid = document.getElementById("courseGrid");
+        if (!introEl || !grid) return;
         try {
           const res = await fetch("teaching.json");
-          if (!res.ok) {
-            throw new Error(
-              "HTTP " + res.status + " when fetching teaching.json"
-            );
-          }
+          if (!res.ok) throw new Error("HTTP " + res.status);
           const data = await res.json();
-
           introEl.textContent = data.intro || "";
-
           (data.courses || []).forEach((course) => {
             const card = document.createElement("article");
             card.className = "course-card";
 
-            const h3 = document.createElement("h3");
-            h3.textContent = course.title;
-            card.appendChild(h3);
+            const title = document.createElement("div");
+            title.className = "course-title";
+            title.textContent = course.title;
+            card.appendChild(title);
 
             const meta = document.createElement("div");
             meta.className = "course-meta";
-            meta.textContent = [course.role, course.institution, course.terms]
-              .filter(Boolean)
-              .join(" · ");
+            meta.textContent = [course.role, course.institution].filter(Boolean).join(" · ");
             card.appendChild(meta);
+
+            if (course.terms) {
+              const terms = document.createElement("div");
+              terms.className = "course-terms";
+              terms.textContent = course.terms;
+              card.appendChild(terms);
+            }
 
             if (course.url) {
               const link = document.createElement("a");
@@ -673,84 +561,71 @@
               link.href = course.url;
               link.target = "_blank";
               link.rel = "noopener";
-              link.textContent = "View course information ↗";
+              link.textContent = "Course information ↗";
               card.appendChild(link);
             }
 
-            listEl.appendChild(card);
+            grid.appendChild(card);
           });
         } catch (err) {
-          console.error("Error loading teaching.json", err);
-          listEl.innerHTML = "<p>Could not load teaching information.</p>";
+          console.error("loadTeaching:", err);
+          grid.innerHTML = "<p>Could not load teaching information.</p>";
         }
       }
 
-      /* Students JSON */
-      async function loadStudentsInfo() {
+      /* ──────────────────────────────────────────────
+         STUDENTS
+      ─────────────────────────────────────────────── */
+      async function loadStudents() {
         const introEl = document.getElementById("studentsIntro");
-        const linesEl = document.getElementById("studentLines");
         const focusEl = document.getElementById("studentsFocus");
-        const ideasBtn = document.getElementById("ideasButton");
-        if (!introEl || !linesEl || !focusEl) return;
-
+        const linesEl = document.getElementById("researchLines");
+        const ctaEl = document.getElementById("ideasCta");
+        if (!introEl || !focusEl || !linesEl) return;
         try {
           const res = await fetch("students.json");
-          if (!res.ok) {
-            throw new Error(
-              "HTTP " + res.status + " when fetching students.json"
-            );
-          }
+          if (!res.ok) throw new Error("HTTP " + res.status);
           const data = await res.json();
-
           introEl.textContent = data.intro || "";
           focusEl.textContent = data.focus || "";
-
           (data.lines || []).forEach((line) => {
-            const chip = document.createElement("div");
-            chip.className = "student-line-chip";
-            chip.textContent = line;
-            linesEl.appendChild(chip);
+            const item = document.createElement("div");
+            item.className = "research-line-item";
+            const dot = document.createElement("span");
+            dot.className = "research-line-dot";
+            item.appendChild(dot);
+            item.appendChild(document.createTextNode(line));
+            linesEl.appendChild(item);
           });
-
-          if (data.ideasUrl && ideasBtn) {
-            ideasBtn.href = data.ideasUrl;
-          }
+          if (data.ideasUrl && ctaEl) ctaEl.href = data.ideasUrl;
         } catch (err) {
-          console.error("Error loading students.json", err);
-          linesEl.innerHTML = "<p>Could not load student information.</p>";
+          console.error("loadStudents:", err);
         }
       }
 
-      /* Set footer "Last updated" from document.lastModified */
+      /* ──────────────────────────────────────────────
+         LAST UPDATED
+      ─────────────────────────────────────────────── */
       function setLastUpdated() {
-        const span = document.getElementById("lastUpdated");
-        if (!span) return;
+        const el = document.getElementById("lastUpdated");
+        if (!el) return;
         const d = new Date(document.lastModified);
-        if (Number.isNaN(d.getTime())) {
-          span.textContent = "—";
-          return;
-        }
-        const formatter = new Intl.DateTimeFormat("en", {
-          month: "long",
-          year: "numeric",
-        });
-        span.textContent = formatter.format(d);
+        if (isNaN(d.getTime())) { el.textContent = "—"; return; }
+        el.textContent = new Intl.DateTimeFormat("en", { month: "long", year: "numeric" }).format(d);
       }
 
-      /* Init */
+      /* ──────────────────────────────────────────────
+         INIT
+      ─────────────────────────────────────────────── */
       document.addEventListener("DOMContentLoaded", () => {
         initRotatingWord();
         initSmoothScroll();
+        initScrollSpy();
         loadPublications();
         loadTeaching();
-        loadStudentsInfo();
+        loadStudents();
         setLastUpdated();
-
-        window.addEventListener("resize", () => {
-          updateCarousel();
-        });
       });
     </script>
-
   </body>
 </html>
