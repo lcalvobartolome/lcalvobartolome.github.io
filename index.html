@@ -49,8 +49,8 @@
             </div>
 
             <div class="hero-links">
-              <a class="hero-link" href="/cdn-cgi/l/email-protection#6c000f0d001a032c1c0d42190f5f0142091f">
-                <span class="__cf_email__" data-cfemail="1b77787a776d745b6b7a356e782876357e68">[email&#160;protected]</span> <span class="link-type">· email</span>
+              <a class="hero-link" href="/cdn-cgi/l/email-protection#fe929d9f928891be8e9fd08b9dcd93d09b8d">
+                <span class="__cf_email__" data-cfemail="8ae6e9ebe6fce5cafaeba4ffe9b9e7a4eff9">[email&#160;protected]</span> <span class="link-type">· email</span>
               </a>
               <a class="hero-link" href="https://drive.google.com/file/d/1kEdb9NDCK2ik7OSYC50FK64Gg6JccpK4/view?usp=drive_link" target="_blank" rel="noopener">
                 CV <span class="link-type">· pdf</span>
@@ -84,32 +84,42 @@
             <p class="section-subtitle">
               Methodologically, my research sits at the intersection of NLP and human-computer interaction, with a focus on the design of task-oriented evaluation protocols, interactive systems for large-scale text exploration, and interfaces that enable domain experts to guide model behaviour.
             </p>
+          </div>
 
-            <!-- Filters -->
-            <div class="filter-bar" aria-label="Filter publications">
-              <div class="filter-group">
-                <div style="display:flex;justify-content:space-between;align-items:center;">
-                  <span class="filter-label">Year range</span>
-                  <span id="yearLabel">2023–2025</span>
-                </div>
-                <div class="filter-range">
-                  <div class="range-track"></div>
-                  <div class="range-highlight" id="rangeHighlight"></div>
-                  <input type="range" id="yearMin" min="2020" max="2025" value="2023" style="z-index:2;" />
-                  <input type="range" id="yearMax" min="2020" max="2025" value="2025" style="z-index:3;" />
-                </div>
-              </div>
-              <div class="filter-group">
-                <span class="filter-label">Topic</span>
-                <select id="tagFilter">
-                  <option value="all">All topics</option>
-                  <option value="multi">Multilingual</option>
-                  <option value="eval">Evaluation</option>
-                  <option value="tooling">Tools</option>
-                  <option value="tm">Topic models</option>
-                  <option value="hci">HCI / users</option>
-                </select>
-              </div>
+          <!-- Filters inline -->
+          <div class="filter-bar" aria-label="Filter publications">
+            <div class="filter-group">
+              <span class="filter-label">From</span>
+              <select id="yearMin">
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <span class="filter-label">To</span>
+              <select id="yearMax">
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025" selected>2025</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <span class="filter-label">Topic</span>
+              <select id="tagFilter">
+                <option value="all">All topics</option>
+                <option value="multi">Multilingual</option>
+                <option value="eval">Evaluation</option>
+                <option value="tooling">Tools</option>
+                <option value="tm">Topic models</option>
+                <option value="hci">HCI / users</option>
+              </select>
             </div>
           </div>
 
@@ -161,8 +171,8 @@
       </main>
 
       <footer>
-        <span>Last updated: <span id="lastUpdated">—</span></span>
-        <span>Built for GitHub Pages · <a href="#top">Back to top ↑</a></span>
+        <span>© 2025 Lorena Calvo-Bartolomé · Universidad Carlos III de Madrid</span>
+        <span>Last updated: <span id="lastUpdated">—</span> · <a href="#top">Back to top ↑</a></span>
       </footer>
     </div>
 
@@ -413,23 +423,7 @@
       }
 
       function updateRangeHighlight() {
-        const yearMin = document.getElementById("yearMin");
-        const yearMax = document.getElementById("yearMax");
-        const highlight = document.getElementById("rangeHighlight");
-        const label = document.getElementById("yearLabel");
-        if (!yearMin || !yearMax || !highlight || !label) return;
-
-        const min = parseInt(yearMin.value, 10);
-        const max = parseInt(yearMax.value, 10);
-        const absMin = parseInt(yearMin.min, 10);
-        const absMax = parseInt(yearMax.max, 10);
-        const span = absMax - absMin;
-
-        const leftPct = ((min - absMin) / span) * 100;
-        const rightPct = ((max - absMin) / span) * 100;
-        highlight.style.left = leftPct + "%";
-        highlight.style.width = Math.max(rightPct - leftPct, 0) + "%";
-        label.textContent = min + "–" + max;
+        // no-op: replaced by select dropdowns
       }
 
       function initFilters() {
@@ -443,19 +437,24 @@
         function onChange() {
           let mn = parseInt(yearMin.value, 10);
           let mx = parseInt(yearMax.value, 10);
-          if (mn > mx) { mx = mn; yearMax.value = String(mx); }
-          updateRangeHighlight();
+          // Clamp: if min > max, snap the other one
+          if (mn > mx) {
+            if (document.activeElement === yearMin) {
+              yearMax.value = String(mn);
+            } else {
+              yearMin.value = String(mx);
+            }
+          }
           applyPubFilters();
         }
 
-        yearMin.addEventListener("input", onChange);
-        yearMax.addEventListener("input", onChange);
+        yearMin.addEventListener("change", onChange);
+        yearMax.addEventListener("change", onChange);
         tagFilter.addEventListener("change", applyPubFilters);
 
         if (prevBtn) prevBtn.addEventListener("click", () => { currentPage--; renderPage(); });
         if (nextBtn) nextBtn.addEventListener("click", () => { currentPage++; renderPage(); });
 
-        updateRangeHighlight();
         applyPubFilters();
       }
 
