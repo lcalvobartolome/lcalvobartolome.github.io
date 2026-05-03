@@ -215,7 +215,7 @@ main {
 ───────────────────────────────────────────── */
 .hero-section {
   display: grid;
-  grid-template-columns: 1fr 230px;
+  grid-template-columns: 1fr 270px;
   gap: 4rem;
   align-items: center;
   padding: 5rem 0 4.5rem;
@@ -320,8 +320,8 @@ main {
 }
 
 .hero-photo-wrap {
-  width: 210px;
-  height: 250px;
+  width: 260px;
+  height: 310px;
   border-radius: var(--radius-xl);
   overflow: hidden;
   background: #f0eeeb;
@@ -450,11 +450,12 @@ main {
 
 #tagFilter:hover, #tagFilter:focus { border-color: var(--blue); }
 
-/* Pubs grid */
+/* Publications grid */
 .pubs-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
+  margin-top: 1.5rem;
 }
 
 .pub-card {
