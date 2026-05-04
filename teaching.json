@@ -2,8 +2,32 @@
   "intro": "I have been co-teaching courses at Universidad Carlos III de Madrid since 2022. Here are the main courses I have / am curren involved in:",
   "courses": [
     {
-      "id": "nlp",
-      "title": "Natural Language Processing",
+      "id": "nlp_mlh",
+      "title": "Natural Language Processing (Master in Machine Learning for Health)",
+      "role": "Co-instructor",
+      "institution": "Universidad Carlos III de Madrid",
+      "terms": "Summer 2026",
+      "url": "https://aplicaciones.uc3m.es/cpa/generaFicha?est=359&asig=20646&idioma=2"
+    },
+    {
+      "id": "mla",
+      "title": "Machine learning applications (Dual Bachelor Data Science and Engineering - Telecommunication Technologies Engineering)",
+      "role": "Co-instructor",
+      "institution": "Universidad Carlos III de Madrid",
+      "terms": "Summer 2026",
+      "url": "https://aplicaciones.uc3m.es/cpa/generaFicha?&est=371&plan=456&asig=16503&idioma=2"
+    },
+      {
+      "id": "fsc",
+      "title": "Fundamentals of simulation in telecommunications (Bachelor in Mobile and Space Communications Engineering)",
+      "role": "Co-instructor",
+      "institution": "Universidad Carlos III de Madrid",
+      "terms": "Summer 2026",
+      "url": "https://aplicaciones.uc3m.es/cpa/generaFicha?est=217&anio=2025&plan=562&asig=20439&idioma=2"
+    },
+    {
+      "id": "nlp_mia",
+      "title": "Natural Language Processing (Master in Applied Artificial Intelligence)",
       "role": "Co-instructor",
       "institution": "Universidad Carlos III de Madrid",
       "terms": "Winter 2022-2024",
@@ -11,7 +35,7 @@
     },
     {
       "id": "data-processing",
-      "title": "Data Processing",
+      "title": "Data Processing (Master in Telecommunication Technologies Engineering)",
       "role": "Co-instructor",
       "institution": "Universidad Carlos III de Madrid",
       "terms": "Winter 2023-2025",
@@ -19,7 +43,7 @@
     },
     {
       "id": "detection-estimation",
-      "title": "Modern Theory of Detection and Estimation",
+      "title": "Modern Theory of Detection and Estimation (Bachelor in Telecommunication Technologies Engineering)",
       "role": "Co-instructor",
       "institution": "Universidad Carlos III de Madrid",
       "terms": "Winter 2022",
